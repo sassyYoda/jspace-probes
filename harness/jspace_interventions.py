@@ -34,7 +34,9 @@ class JVecs:
         self._cache = {}
 
     def token_id(self, word):
-        ids = self.tokenizer.encode(" " + word.strip())
+        # add_special_tokens=False: BOS-prepending tokenizers (gemma) put BOS
+        # first, which silently made every j-vector the BOS unembedding row
+        ids = self.tokenizer.encode(" " + word.strip(), add_special_tokens=False)
         for t in ids:
             if self.tokenizer.decode([t]).strip():
                 return t
