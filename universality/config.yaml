@@ -1,0 +1,29 @@
+lens_repo: neuronpedia/jacobian-lens
+lens_revision: a4114d7752d11eb546e6cf372213d7e75526d3a1
+
+models:
+  qwen3-1.7b:
+    hf_repo: Qwen/Qwen3-1.7B
+    hf_revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+    lens_file: qwen3-1.7b/jlens/Salesforce-wikitext/Qwen3-1.7B_jacobian_lens.pt
+    n_layers: 28
+    norm_plus_one: false
+  gemma-2-2b:
+    hf_repo: google/gemma-2-2b
+    hf_revision: c5ebcd40d208330abc697524c919956e692655cf
+    lens_file: gemma-2-2b/jlens/Salesforce-wikitext/gemma-2-2b_jacobian_lens.pt
+    n_layers: 26
+    norm_plus_one: true
+  gpt2-small:
+    hf_repo: gpt2
+    hf_revision: 607a30d783dfa663caf39e06633721c8d4cfcd7e
+    lens_file: gpt2-small/jlens/Salesforce-wikitext/gpt2_jacobian_lens.pt
+    n_layers: 12
+    norm_plus_one: false
+
+fractions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+mid_fractions: [0.4, 0.5, 0.6, 0.7]
+min_concepts: 120
+svcca_components: 50
+seed: 0
+baseline_seeds: [0, 1, 2]

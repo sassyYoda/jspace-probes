@@ -1,0 +1,17 @@
+model: Qwen/Qwen3.5-4B
+lens_repo: neuronpedia/jacobian-lens
+lens_file: qwen3.5-4b/jlens/Salesforce-wikitext/Qwen3.5-4B_jacobian_lens_n1000.pt
+device: auto
+band: [0.40, 0.75]      # mid band; layers 12-22 on the 31-layer lens (validated in harness)
+ks: [5, 10, 20, 40]
+random_seeds: [0, 1]
+scan_top: 4000          # raw vocab entries scanned before exclusion filtering
+active_pool: 500        # filtered candidates kept; real = ranks 1..k, bottom = ranks 500-k+1..500
+n_items: 40             # per task; multihop uses all 90 probe-swap items
+arith_seed: 0
+mmlu_seed: 0
+sst2_seed: 0
+criterion:              # pre-registered, evaluated at k
+  k: 20
+  dep_min_drop: 0.15    # workspace-dependent: real must sit >= 15 points below random control
+  indep_max_drop: 0.05  # workspace-independent: real within 5 points of random control

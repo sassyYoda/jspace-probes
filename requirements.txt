@@ -1,0 +1,12 @@
+# The Jacobian lens reference package (Apache-2.0). Clone it for the prompt-set
+# data too (see README setup): git clone https://github.com/anthropics/jacobian-lens vendor/jacobian-lens
+jlens @ git+https://github.com/anthropics/jacobian-lens
+torch>=2.4
+transformers>=5.5
+huggingface_hub
+safetensors
+numpy
+scipy
+matplotlib
+pyyaml
+datasets

@@ -1,0 +1,4403 @@
+{
+ "summary": {
+  "model": "Qwen/Qwen3.5-4B",
+  "n_items": 90,
+  "noop_check": "pass",
+  "bands": {
+   "mid": [
+    12,
+    22
+   ],
+   "early": [
+    2,
+    6
+   ],
+   "band_0.30-0.65": [
+    9,
+    19
+   ],
+   "band_0.50-0.85": [
+    15,
+    25
+   ],
+   "band_0.25-0.90": [
+    8,
+    27
+   ]
+  },
+  "positions": "all",
+  "random_seeds": [
+   0,
+   1,
+   2
+  ],
+  "flip_rates": {
+   "rand_mid_s0": {
+    "flip_rate": 0.044,
+    "flip_rate_baseline_correct": 0.017,
+    "mean_margin_shift": 0.019,
+    "n": 90,
+    "n_baseline_correct": 58
+   },
+   "rand_mid_s2": {
+    "flip_rate": 0.044,
+    "flip_rate_baseline_correct": 0.017,
+    "mean_margin_shift": -0.002,
+    "n": 90,
+    "n_baseline_correct": 58
+   },
+   "real_mid_a2": {
+    "flip_rate": 0.444,
+    "flip_rate_baseline_correct": 0.586,
+    "mean_margin_shift": 9.402,
+    "n": 90,
+    "n_baseline_correct": 58
+   },
+   "rand_mid_s1": {
+    "flip_rate": 0.044,
+    "flip_rate_baseline_correct": 0.017,
+    "mean_margin_shift": 0.073,
+    "n": 90,
+    "n_baseline_correct": 58
+   },
+   "real_mid": {
+    "flip_rate": 0.456,
+    "flip_rate_baseline_correct": 0.586,
+    "mean_margin_shift": 9.059,
+    "n": 90,
+    "n_baseline_correct": 58
+   },
+   "early": {
+    "flip_rate": 0.211,
+    "flip_rate_baseline_correct": 0.276,
+    "mean_margin_shift": 2.598,
+    "n": 90,
+    "n_baseline_correct": 58
+   }
+  },
+  "baseline_accuracy": 0.644,
+  "wall_clock_seconds": 68.3
+ },
+ "items": [
+  {
+   "name": "amazon-language",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Spanish",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 7.250000059604645
+    },
+    "real_mid_a2": {
+     "greedy": " Spanish",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 7.875000178813934
+    },
+    "early": {
+     "greedy": " Spanish",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 2.4999999403953552
+    },
+    "rand_mid_s0": {
+     "greedy": " Portuguese",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.0625
+    },
+    "rand_mid_s1": {
+     "greedy": " Portuguese",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0625
+    },
+    "rand_mid_s2": {
+     "greedy": " Portuguese",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.0625
+    }
+   },
+   "baseline": {
+    "greedy": " Portuguese",
+    "answer_correct": true,
+    "lp_answer": -1.062946081161499,
+    "lp_swap_answer": -1.562946081161499
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "animal-cover-turtle",
+   "conditions": {
+    "real_mid": {
+     "greedy": " scale",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 12.312499821186066
+    },
+    "real_mid_a2": {
+     "greedy": " scale",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 12.374999701976776
+    },
+    "early": {
+     "greedy": " shell",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 2.437499761581421
+    },
+    "rand_mid_s0": {
+     "greedy": " shell",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1249997615814209
+    },
+    "rand_mid_s1": {
+     "greedy": " shell",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.1875002682209015
+    },
+    "rand_mid_s2": {
+     "greedy": " shell",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -2.086162567138672e-07
+    }
+   },
+   "baseline": {
+    "greedy": " shell",
+    "answer_correct": true,
+    "lp_answer": -0.3879595398902893,
+    "lp_swap_answer": -6.5129594802856445
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "animal-legs-buffalo2",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.25
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.375
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": false,
+    "lp_answer": -2.0791759490966797,
+    "lp_swap_answer": -3.4541759490966797
+   },
+   "seconds": 0.66
+  },
+  {
+   "name": "animal-nose-elephant",
+   "conditions": {
+    "real_mid": {
+     "greedy": " tongue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 8.875000178813934
+    },
+    "real_mid_a2": {
+     "greedy": " tongue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 9.249999701976776
+    },
+    "early": {
+     "greedy": " tongue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.1250000596046448
+    },
+    "rand_mid_s0": {
+     "greedy": " trunk",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " trunk",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 5.960464477539063e-08
+    },
+    "rand_mid_s2": {
+     "greedy": " trunk",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500011920928955
+    }
+   },
+   "baseline": {
+    "greedy": " trunk",
+    "answer_correct": true,
+    "lp_answer": -0.5777382254600525,
+    "lp_swap_answer": -1.5777382850646973
+   },
+   "seconds": 0.67
+  },
+  {
+   "name": "atomic-80-state",
+   "conditions": {
+    "real_mid": {
+     "greedy": " solid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.6250001192092896
+    },
+    "real_mid_a2": {
+     "greedy": " solid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 4.1250001192092896
+    },
+    "early": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.25
+    },
+    "rand_mid_s0": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    }
+   },
+   "baseline": {
+    "greedy": " a",
+    "answer_correct": false,
+    "lp_answer": -1.178118348121643,
+    "lp_swap_answer": -1.678118348121643
+   },
+   "seconds": 0.68
+  },
+  {
+   "name": "basketball-players",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.75
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.25
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.5
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": false,
+    "lp_answer": -1.5822098851203918,
+    "lp_swap_answer": -4.082209885120392
+   },
+   "seconds": 1.29
+  },
+  {
+   "name": "beverage-source-wine",
+   "conditions": {
+    "real_mid": {
+     "greedy": " same",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 8.499999523162842
+    },
+    "real_mid_a2": {
+     "greedy": " same",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.749999523162842
+    },
+    "early": {
+     "greedy": " same",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.8124995231628418
+    },
+    "rand_mid_s0": {
+     "greedy": " same",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.1875
+    },
+    "rand_mid_s1": {
+     "greedy": " same",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0937495231628418
+    },
+    "rand_mid_s2": {
+     "greedy": " same",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0312504768371582
+    }
+   },
+   "baseline": {
+    "greedy": " same",
+    "answer_correct": false,
+    "lp_answer": -2.8765416145324707,
+    "lp_swap_answer": -9.564041137695312
+   },
+   "seconds": 0.69
+  },
+  {
+   "name": "bird-color-swan",
+   "conditions": {
+    "real_mid": {
+     "greedy": " white",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.5624998807907104
+    },
+    "real_mid_a2": {
+     "greedy": " white",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.5625001192092896
+    },
+    "early": {
+     "greedy": " white",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12499988079071045
+    },
+    "rand_mid_s0": {
+     "greedy": " white",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " white",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18750035762786865
+    },
+    "rand_mid_s2": {
+     "greedy": " white",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12499988079071045
+    }
+   },
+   "baseline": {
+    "greedy": " white",
+    "answer_correct": true,
+    "lp_answer": -1.7271255254745483,
+    "lp_swap_answer": -5.477125644683838
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "bird-country-eagle",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.0
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.9375
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.125
+    },
+    "rand_mid_s0": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0625
+    },
+    "rand_mid_s2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    }
+   },
+   "baseline": {
+    "greedy": " the",
+    "answer_correct": false,
+    "lp_answer": -5.635125160217285,
+    "lp_swap_answer": -5.885125160217285
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "bird-time-owl",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.375
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.75
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.3124997615814209
+    },
+    "rand_mid_s0": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0625
+    },
+    "rand_mid_s1": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.1250002384185791
+    },
+    "rand_mid_s2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0624997615814209
+    }
+   },
+   "baseline": {
+    "greedy": " the",
+    "answer_correct": false,
+    "lp_answer": -3.1318955421447754,
+    "lp_swap_answer": -6.444395542144775
+   },
+   "seconds": 0.66
+  },
+  {
+   "name": "birthstone-emerald-month",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 2.625000022351742
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.125000022351742
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 2.0116567611694336e-07
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.4999998211860657
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12500018626451492
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.37499988824129105
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -0.37603161484003067,
+    "lp_swap_answer": -4.5010316371917725
+   },
+   "seconds": 1.28
+  },
+  {
+   "name": "chem-atmosphere-Z",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.875
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 3.125
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.0000001192092896
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.12500011920928955
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.1920928955078125e-07
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": false,
+    "lp_answer": -1.5027407929301262,
+    "lp_swap_answer": -4.002740792930126
+   },
+   "seconds": 1.3
+  },
+  {
+   "name": "chem-bones-Z",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "early": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": true,
+     "margin_shift": 0.0
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -0.9434205889701843,
+    "lp_swap_answer": -0.9434205889701843
+   },
+   "seconds": 1.2
+  },
+  {
+   "name": "chem-organic-Z",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 6.499999850988388
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.1249997317790985
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3749997615814209
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12500005960464478
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12499991059303284
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -0.5251159071922302,
+    "lp_swap_answer": -7.025115758180618
+   },
+   "seconds": 1.22
+  },
+  {
+   "name": "chem-photosynthesis-Z",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.25
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 3.749999761581421
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.375
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.24999988079071045
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": false,
+    "lp_answer": -1.4067435935139656,
+    "lp_swap_answer": -3.5317435935139656
+   },
+   "seconds": 1.16
+  },
+  {
+   "name": "christmas-season",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.0
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.874999761581421
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625
+    },
+    "rand_mid_s0": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.384185791015625e-07
+    },
+    "rand_mid_s2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.1875
+    }
+   },
+   "baseline": {
+    "greedy": " the",
+    "answer_correct": false,
+    "lp_answer": -2.3520283699035645,
+    "lp_swap_answer": -5.2895283699035645
+   },
+   "seconds": 0.65
+  },
+  {
+   "name": "city-state-Philadelphia",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.25
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.625
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.375
+    },
+    "rand_mid_s0": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.1875
+    },
+    "rand_mid_s2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625
+    }
+   },
+   "baseline": {
+    "greedy": " the",
+    "answer_correct": false,
+    "lp_answer": -4.661956787109375,
+    "lp_swap_answer": -4.224456787109375
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "colosseum-currency",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Mexican",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 16.43749961256981
+    },
+    "real_mid_a2": {
+     "greedy": " Mexican",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 16.49999961256981
+    },
+    "early": {
+     "greedy": " Euro",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 5.8750002682209015
+    },
+    "rand_mid_s0": {
+     "greedy": " Euro",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18750038743019104
+    },
+    "rand_mid_s1": {
+     "greedy": " Euro",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3124997913837433
+    },
+    "rand_mid_s2": {
+     "greedy": " Euro",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12499955296516418
+    }
+   },
+   "baseline": {
+    "greedy": " Euro",
+    "answer_correct": true,
+    "lp_answer": -0.3867091238498688,
+    "lp_swap_answer": -9.886709213256836
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "element-color-gold2",
+   "conditions": {
+    "real_mid": {
+     "greedy": " silver",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.749999523162842
+    },
+    "real_mid_a2": {
+     "greedy": " silver",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.687500476837158
+    },
+    "early": {
+     "greedy": " silver",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.0625
+    },
+    "rand_mid_s0": {
+     "greedy": " gold",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " gold",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625
+    },
+    "rand_mid_s2": {
+     "greedy": " gold",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625
+    }
+   },
+   "baseline": {
+    "greedy": " gold",
+    "answer_correct": false,
+    "lp_answer": -2.3394598960876465,
+    "lp_swap_answer": -5.3394598960876465
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "etym-frigg-position",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.75
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.0
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -1.7970947176218033,
+    "lp_swap_answer": -2.0470947176218033
+   },
+   "seconds": 1.18
+  },
+  {
+   "name": "etym-saturn-position",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.7499998807907104
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.0
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.25
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": false,
+    "lp_answer": -2.6396369636058807,
+    "lp_swap_answer": -2.7646369636058807
+   },
+   "seconds": 1.14
+  },
+  {
+   "name": "etym-wargod-month",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.8749998807907104
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 5.375000178813934
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.375
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -5.960464477539063e-08
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -1.1920928955078125e-07
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.125
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -1.2835996448993683,
+    "lp_swap_answer": -3.1585996448993683
+   },
+   "seconds": 1.16
+  },
+  {
+   "name": "ex-city-capital-Barcelona-Toronto",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Toronto",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 20.250000327825546
+    },
+    "real_mid_a2": {
+     "greedy": " Ottawa",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 20.84374949336052
+    },
+    "early": {
+     "greedy": " Ottawa",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 15.312499970197678
+    },
+    "rand_mid_s0": {
+     "greedy": " Madrid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12499967217445374
+    },
+    "rand_mid_s1": {
+     "greedy": " Madrid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500032782554626
+    },
+    "rand_mid_s2": {
+     "greedy": " Madrid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.4901161193847656e-07
+    }
+   },
+   "baseline": {
+    "greedy": " Madrid",
+    "answer_correct": true,
+    "lp_answer": -0.331999808549881,
+    "lp_swap_answer": -9.644499778747559
+   },
+   "seconds": 0.69
+  },
+  {
+   "name": "ex-city-capital-Lyon-Naples",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Rome",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 11.937500163912773
+    },
+    "real_mid_a2": {
+     "greedy": " Rome",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 12.749999567866325
+    },
+    "early": {
+     "greedy": " Paris",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 4.062500044703484
+    },
+    "rand_mid_s0": {
+     "greedy": " Paris",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06249991059303284
+    },
+    "rand_mid_s1": {
+     "greedy": " Paris",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18749991059303284
+    },
+    "rand_mid_s2": {
+     "greedy": " Paris",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06249989569187164
+    }
+   },
+   "baseline": {
+    "greedy": " Paris",
+    "answer_correct": true,
+    "lp_answer": -0.17876960337162018,
+    "lp_swap_answer": -4.741269588470459
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "ex-city-capital-Naples-Barcelona",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Madrid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 10.562500149011612
+    },
+    "real_mid_a2": {
+     "greedy": " Madrid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 10.87499988079071
+    },
+    "early": {
+     "greedy": " Madrid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 4.500000089406967
+    },
+    "rand_mid_s0": {
+     "greedy": " Rome",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06249997019767761
+    },
+    "rand_mid_s1": {
+     "greedy": " Rome",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500008940696716
+    },
+    "rand_mid_s2": {
+     "greedy": " Rome",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500005960464478
+    }
+   },
+   "baseline": {
+    "greedy": " Rome",
+    "answer_correct": true,
+    "lp_answer": -0.3368012607097626,
+    "lp_swap_answer": -3.586801290512085
+   },
+   "seconds": 0.6
+  },
+  {
+   "name": "ex-city-capital-Toronto-Lyon",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Paris",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 16.593750536441803
+    },
+    "real_mid_a2": {
+     "greedy": " Paris",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 16.937500447034836
+    },
+    "early": {
+     "greedy": " Paris",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 8.750000149011612
+    },
+    "rand_mid_s0": {
+     "greedy": " Ottawa",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250008940696716
+    },
+    "rand_mid_s1": {
+     "greedy": " Ottawa",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12499997019767761
+    },
+    "rand_mid_s2": {
+     "greedy": " Ottawa",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.062499627470970154
+    }
+   },
+   "baseline": {
+    "greedy": " Ottawa",
+    "answer_correct": true,
+    "lp_answer": -0.1908757984638214,
+    "lp_swap_answer": -5.753376007080078
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex-city-continent-Toronto-Lyon",
+   "conditions": {
+    "real_mid": {
+     "greedy": " France",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.187500298023224
+    },
+    "real_mid_a2": {
+     "greedy": " France",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.812500059604645
+    },
+    "early": {
+     "greedy": " Europe",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 4.875000059604645
+    },
+    "rand_mid_s0": {
+     "greedy": " North",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.25000011920928955
+    },
+    "rand_mid_s1": {
+     "greedy": " North",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06249988079071045
+    },
+    "rand_mid_s2": {
+     "greedy": " North",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500011920928955
+    }
+   },
+   "baseline": {
+    "greedy": " North",
+    "answer_correct": true,
+    "lp_answer": -0.7347111105918884,
+    "lp_swap_answer": -3.609711170196533
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex-city-currency-Toronto-Beijing",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Ren",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 21.093749701976776
+    },
+    "real_mid_a2": {
+     "greedy": " Ren",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 21.749999701976776
+    },
+    "early": {
+     "greedy": " Canadian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 7.875000357627869
+    },
+    "rand_mid_s0": {
+     "greedy": " Canadian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06249941140413284
+    },
+    "rand_mid_s1": {
+     "greedy": " Canadian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3124999776482582
+    },
+    "rand_mid_s2": {
+     "greedy": " Canadian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.1875002458691597
+    }
+   },
+   "baseline": {
+    "greedy": " Canadian",
+    "answer_correct": true,
+    "lp_answer": -0.08252698183059692,
+    "lp_swap_answer": -11.145027160644531
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "ex-city-currency-Toronto-Mumbai",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Ru",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 23.500000178813934
+    },
+    "real_mid_a2": {
+     "greedy": " Ru",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 24.187499940395355
+    },
+    "early": {
+     "greedy": " Indian",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 18.875000655651093
+    },
+    "rand_mid_s0": {
+     "greedy": " Canadian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.031249940395355225
+    },
+    "rand_mid_s1": {
+     "greedy": " Canadian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.2187505066394806
+    },
+    "rand_mid_s2": {
+     "greedy": " Canadian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.2187497466802597
+    }
+   },
+   "baseline": {
+    "greedy": " Canadian",
+    "answer_correct": true,
+    "lp_answer": -0.08252698183059692,
+    "lp_swap_answer": -12.832527160644531
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex-city-language-Lyon-Naples",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Italian",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 15.625000640749931
+    },
+    "real_mid_a2": {
+     "greedy": " Italian",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 16.000000074505806
+    },
+    "early": {
+     "greedy": " French",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 6.062500208616257
+    },
+    "rand_mid_s0": {
+     "greedy": " French",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250041723251343
+    },
+    "rand_mid_s1": {
+     "greedy": " French",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.25000031292438507
+    },
+    "rand_mid_s2": {
+     "greedy": " French",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250020861625671
+    }
+   },
+   "baseline": {
+    "greedy": " French",
+    "answer_correct": true,
+    "lp_answer": -0.1727006733417511,
+    "lp_swap_answer": -6.485200881958008
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex-element-state-26-8",
+   "conditions": {
+    "real_mid": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.437499761581421
+    },
+    "real_mid_a2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.812499761581421
+    },
+    "early": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.1249996423721313
+    },
+    "rand_mid_s0": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18749982118606567
+    },
+    "rand_mid_s1": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.7499999403953552
+    },
+    "rand_mid_s2": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.5625004172325134
+    }
+   },
+   "baseline": {
+    "greedy": " solid",
+    "answer_correct": true,
+    "lp_answer": -0.925553560256958,
+    "lp_swap_answer": -7.238053321838379
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "ex-element-state-26-80",
+   "conditions": {
+    "real_mid": {
+     "greedy": " liquid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 2.9999999403953552
+    },
+    "real_mid_a2": {
+     "greedy": " liquid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.5000000596046448
+    },
+    "early": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.7500001192092896
+    },
+    "rand_mid_s0": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500005960464478
+    },
+    "rand_mid_s1": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 5.960464477539063e-08
+    },
+    "rand_mid_s2": {
+     "greedy": " solid",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.125
+    }
+   },
+   "baseline": {
+    "greedy": " solid",
+    "answer_correct": true,
+    "lp_answer": -0.925553560256958,
+    "lp_swap_answer": -2.800553560256958
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex-element-state-8-26",
+   "conditions": {
+    "real_mid": {
+     "greedy": " solid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 5.750000238418579
+    },
+    "real_mid_a2": {
+     "greedy": " solid",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 6.062499642372131
+    },
+    "early": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.25
+    },
+    "rand_mid_s0": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.25
+    },
+    "rand_mid_s2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.37500011920928955
+    }
+   },
+   "baseline": {
+    "greedy": " a",
+    "answer_correct": false,
+    "lp_answer": -3.1267857551574707,
+    "lp_swap_answer": -2.1267857551574707
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex-element-state-8-80",
+   "conditions": {
+    "real_mid": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.6874998807907104
+    },
+    "real_mid_a2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.062499761581421
+    },
+    "early": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.375
+    },
+    "rand_mid_s0": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.375
+    },
+    "rand_mid_s2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    }
+   },
+   "baseline": {
+    "greedy": " a",
+    "answer_correct": false,
+    "lp_answer": -3.1267857551574707,
+    "lp_swap_answer": -2.0017857551574707
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "ex-element-state-80-8",
+   "conditions": {
+    "real_mid": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.5624998807907104
+    },
+    "real_mid_a2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.687499761581421
+    },
+    "early": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.875
+    },
+    "rand_mid_s0": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.25000011920928955
+    },
+    "rand_mid_s1": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.4375
+    },
+    "rand_mid_s2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.43749988079071045
+    }
+   },
+   "baseline": {
+    "greedy": " a",
+    "answer_correct": false,
+    "lp_answer": -1.178118348121643,
+    "lp_swap_answer": -4.8656182289123535
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex-element-symbol-11-26",
+   "conditions": {
+    "real_mid": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 15.562499791383743
+    },
+    "real_mid_a2": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 15.374999552965164
+    },
+    "early": {
+     "greedy": " Na",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.562499463558197
+    },
+    "rand_mid_s0": {
+     "greedy": " Na",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06249953806400299
+    },
+    "rand_mid_s1": {
+     "greedy": " Na",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.24999943375587463
+    },
+    "rand_mid_s2": {
+     "greedy": " Na",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250046193599701
+    }
+   },
+   "baseline": {
+    "greedy": " Na",
+    "answer_correct": true,
+    "lp_answer": -0.2516750991344452,
+    "lp_swap_answer": -9.43917465209961
+   },
+   "seconds": 0.65
+  },
+  {
+   "name": "ex-element-symbol-26-79",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Fe",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 9.812500447034836
+    },
+    "real_mid_a2": {
+     "greedy": " Au",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 13.062500447034836
+    },
+    "early": {
+     "greedy": " Fe",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.6250004917383194
+    },
+    "rand_mid_s0": {
+     "greedy": " Fe",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1250002235174179
+    },
+    "rand_mid_s1": {
+     "greedy": " Fe",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.25000087916851044
+    },
+    "rand_mid_s2": {
+     "greedy": " Fe",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500029802322388
+    }
+   },
+   "baseline": {
+    "greedy": " Fe",
+    "answer_correct": true,
+    "lp_answer": -0.15117505192756653,
+    "lp_swap_answer": -10.838675498962402
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "ex-planet-color-third-fourth",
+   "conditions": {
+    "real_mid": {
+     "greedy": " red",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.6874998807907104
+    },
+    "real_mid_a2": {
+     "greedy": " red",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.875
+    },
+    "early": {
+     "greedy": " red",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.6249998807907104
+    },
+    "rand_mid_s0": {
+     "greedy": " blue",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.1250002384185791
+    },
+    "rand_mid_s1": {
+     "greedy": " blue",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12500011920928955
+    },
+    "rand_mid_s2": {
+     "greedy": " blue",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.125
+    }
+   },
+   "baseline": {
+    "greedy": " blue",
+    "answer_correct": true,
+    "lp_answer": -1.6964856386184692,
+    "lp_swap_answer": -2.0714855194091797
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex2-city-capital-Munich",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Tokyo",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 16.437499321997166
+    },
+    "real_mid_a2": {
+     "greedy": " Tokyo",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 16.937499403953552
+    },
+    "early": {
+     "greedy": " Tokyo",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 12.812500014901161
+    },
+    "rand_mid_s0": {
+     "greedy": " Berlin",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.062499821186065674
+    },
+    "rand_mid_s1": {
+     "greedy": " Berlin",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1250000298023224
+    },
+    "rand_mid_s2": {
+     "greedy": " Berlin",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12500029802322388
+    }
+   },
+   "baseline": {
+    "greedy": " Berlin",
+    "answer_correct": true,
+    "lp_answer": -0.22717687487602234,
+    "lp_swap_answer": -6.852176666259766
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "ex2-city-capital-Osaka",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Berlin",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 16.375000208616257
+    },
+    "real_mid_a2": {
+     "greedy": " Berlin",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 16.562500417232513
+    },
+    "early": {
+     "greedy": " Berlin",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 10.500000238418579
+    },
+    "rand_mid_s0": {
+     "greedy": " Tokyo",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " Tokyo",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500014901161194
+    },
+    "rand_mid_s2": {
+     "greedy": " Tokyo",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 3.8743019104003906e-07
+    }
+   },
+   "baseline": {
+    "greedy": " Tokyo",
+    "answer_correct": true,
+    "lp_answer": -0.257093220949173,
+    "lp_swap_answer": -6.19459342956543
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "ex2-city-continent-Lima",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Africa",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 11.187500268220901
+    },
+    "real_mid_a2": {
+     "greedy": " Africa",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 11.562500029802322
+    },
+    "early": {
+     "greedy": " South",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.375
+    },
+    "rand_mid_s0": {
+     "greedy": " South",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12499979138374329
+    },
+    "rand_mid_s1": {
+     "greedy": " South",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1250000298023224
+    },
+    "rand_mid_s2": {
+     "greedy": " South",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1875000298023224
+    }
+   },
+   "baseline": {
+    "greedy": " South",
+    "answer_correct": true,
+    "lp_answer": -0.35522744059562683,
+    "lp_swap_answer": -4.855227470397949
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex2-city-continent-Sydney",
+   "conditions": {
+    "real_mid": {
+     "greedy": " South",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 11.71875
+    },
+    "real_mid_a2": {
+     "greedy": " South",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 11.906250238418579
+    },
+    "early": {
+     "greedy": " South",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.7499998807907104
+    },
+    "rand_mid_s0": {
+     "greedy": " Australia",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " Australia",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " Australia",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.25
+    }
+   },
+   "baseline": {
+    "greedy": " Australia",
+    "answer_correct": true,
+    "lp_answer": -1.2296568155288696,
+    "lp_swap_answer": -2.72965669631958
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "ex2-city-language-Cairo",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Russian",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 19.312500029802322
+    },
+    "real_mid_a2": {
+     "greedy": " Russian",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 19.374999850988388
+    },
+    "early": {
+     "greedy": " Arabic",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 5.937500298023224
+    },
+    "rand_mid_s0": {
+     "greedy": " Arabic",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250062584877014
+    },
+    "rand_mid_s1": {
+     "greedy": " Arabic",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500062584877014
+    },
+    "rand_mid_s2": {
+     "greedy": " Arabic",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -5.960464477539063e-08
+    }
+   },
+   "baseline": {
+    "greedy": " Arabic",
+    "answer_correct": true,
+    "lp_answer": -0.271437406539917,
+    "lp_swap_answer": -9.333937644958496
+   },
+   "seconds": 0.68
+  },
+  {
+   "name": "ex2-city-language-Moscow",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Arabic",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 19.468749716877937
+    },
+    "real_mid_a2": {
+     "greedy": " Arabic",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 19.68750025331974
+    },
+    "early": {
+     "greedy": " Russian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 3.6250002831220627
+    },
+    "rand_mid_s0": {
+     "greedy": " Russian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500032782554626
+    },
+    "rand_mid_s1": {
+     "greedy": " Russian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.31250064074993134
+    },
+    "rand_mid_s2": {
+     "greedy": " Russian",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250041723251343
+    }
+   },
+   "baseline": {
+    "greedy": " Russian",
+    "answer_correct": true,
+    "lp_answer": -0.2025945633649826,
+    "lp_swap_answer": -8.827594757080078
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "ex2-language-capital-Greek",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Stockholm",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 20.343749552965164
+    },
+    "real_mid_a2": {
+     "greedy": " Stockholm",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 20.843750029802322
+    },
+    "early": {
+     "greedy": " Stockholm",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 13.499999552965164
+    },
+    "rand_mid_s0": {
+     "greedy": " Athens",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250010430812836
+    },
+    "rand_mid_s1": {
+     "greedy": " Athens",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18749994039535522
+    },
+    "rand_mid_s2": {
+     "greedy": " Athens",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -4.76837158203125e-07
+    }
+   },
+   "baseline": {
+    "greedy": " Athens",
+    "answer_correct": true,
+    "lp_answer": -0.21732929348945618,
+    "lp_swap_answer": -8.404829025268555
+   },
+   "seconds": 0.66
+  },
+  {
+   "name": "ex2-language-capital-Hungarian",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Warsaw",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 14.624999716877937
+    },
+    "real_mid_a2": {
+     "greedy": " Warsaw",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 14.687499836087227
+    },
+    "early": {
+     "greedy": " Budapest",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 3.1249999552965164
+    },
+    "rand_mid_s0": {
+     "greedy": " Budapest",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250016391277313
+    },
+    "rand_mid_s1": {
+     "greedy": " Budapest",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500007450580597
+    },
+    "rand_mid_s2": {
+     "greedy": " Budapest",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.12499973177909851
+    }
+   },
+   "baseline": {
+    "greedy": " Budapest",
+    "answer_correct": true,
+    "lp_answer": -0.13698141276836395,
+    "lp_swap_answer": -7.82448148727417
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "ex2-language-capital-Polish",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Athens",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 21.24999976158142
+    },
+    "real_mid_a2": {
+     "greedy": " Athens",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 21.906250149011612
+    },
+    "early": {
+     "greedy": " Warsaw",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 2.9999996423721313
+    },
+    "rand_mid_s0": {
+     "greedy": " Warsaw",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12499961256980896
+    },
+    "rand_mid_s1": {
+     "greedy": " Warsaw",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18750005960464478
+    },
+    "rand_mid_s2": {
+     "greedy": " Warsaw",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -6.556510925292969e-07
+    }
+   },
+   "baseline": {
+    "greedy": " Warsaw",
+    "answer_correct": true,
+    "lp_answer": -0.2677881717681885,
+    "lp_swap_answer": -9.83028793334961
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "ex2-language-capital-Swedish",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Budapest",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 20.624999806284904
+    },
+    "real_mid_a2": {
+     "greedy": " Budapest",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 21.156250327825546
+    },
+    "early": {
+     "greedy": " Budapest",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 13.124999940395355
+    },
+    "rand_mid_s0": {
+     "greedy": " Stockholm",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.25000007450580597
+    },
+    "rand_mid_s1": {
+     "greedy": " Stockholm",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12499959766864777
+    },
+    "rand_mid_s2": {
+     "greedy": " Stockholm",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3125002384185791
+    }
+   },
+   "baseline": {
+    "greedy": " Stockholm",
+    "answer_correct": true,
+    "lp_answer": -0.14473259449005127,
+    "lp_swap_answer": -9.582232475280762
+   },
+   "seconds": 0.59
+  },
+  {
+   "name": "ex2-river-capital-Thames",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Berlin",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 10.312499791383743
+    },
+    "real_mid_a2": {
+     "greedy": " Berlin",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 10.874999731779099
+    },
+    "early": {
+     "greedy": " Berlin",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 7.062499910593033
+    },
+    "rand_mid_s0": {
+     "greedy": " London",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250029802322388
+    },
+    "rand_mid_s1": {
+     "greedy": " London",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.062499821186065674
+    },
+    "rand_mid_s2": {
+     "greedy": " London",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1249997615814209
+    }
+   },
+   "baseline": {
+    "greedy": " London",
+    "answer_correct": true,
+    "lp_answer": -0.32762351632118225,
+    "lp_swap_answer": -4.76512336730957
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "food-animal-butter",
+   "conditions": {
+    "real_mid": {
+     "greedy": " honey",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 18.71875011920929
+    },
+    "real_mid_a2": {
+     "greedy": " honey",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 19.09375035762787
+    },
+    "early": {
+     "greedy": " cow",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 4.531249940395355
+    },
+    "rand_mid_s0": {
+     "greedy": " cow",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 2.384185791015625e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " cow",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.37500008940696716
+    },
+    "rand_mid_s2": {
+     "greedy": " cow",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.09375041723251343
+    }
+   },
+   "baseline": {
+    "greedy": " cow",
+    "answer_correct": true,
+    "lp_answer": -0.43248450756073,
+    "lp_swap_answer": -9.58873462677002
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "food-animal-honey",
+   "conditions": {
+    "real_mid": {
+     "greedy": " butter",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 16.84375
+    },
+    "real_mid_a2": {
+     "greedy": " butter",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 17.156250476837158
+    },
+    "early": {
+     "greedy": " honey",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.125000476837158
+    },
+    "rand_mid_s0": {
+     "greedy": " honey",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.384185791015625e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " honey",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.06249964237213135
+    },
+    "rand_mid_s2": {
+     "greedy": " honey",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0937502384185791
+    }
+   },
+   "baseline": {
+    "greedy": " honey",
+    "answer_correct": false,
+    "lp_answer": -1.1196098327636719,
+    "lp_swap_answer": -12.025859832763672
+   },
+   "seconds": 0.6
+  },
+  {
+   "name": "fruit-grows-grape",
+   "conditions": {
+    "real_mid": {
+     "greedy": " tree",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 14.718750178813934
+    },
+    "real_mid_a2": {
+     "greedy": " tree",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 14.843750238418579
+    },
+    "early": {
+     "greedy": " vine",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.8125001192092896
+    },
+    "rand_mid_s0": {
+     "greedy": " vine",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 2.384185791015625e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " vine",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " vine",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.3125000596046448
+    }
+   },
+   "baseline": {
+    "greedy": " vine",
+    "answer_correct": true,
+    "lp_answer": -0.6837052702903748,
+    "lp_swap_answer": -4.1212053298950195
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "func-filters-count",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.625
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.375
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -5.960464477539063e-08
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -2.9802322387695312e-08
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12499988079071045
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -1.048054575920105,
+    "lp_swap_answer": -1.9230545163154602
+   },
+   "seconds": 1.18
+  },
+  {
+   "name": "func-pumps-chambers",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 5.125000081956387
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 6.000000141561031
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.37500008940696716
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.7881393432617188e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500009685754776
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.1920928955078125e-07
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -0.8703005686402321,
+    "lp_swap_answer": -3.9953006505966187
+   },
+   "seconds": 1.19
+  },
+  {
+   "name": "gem-color-ruby",
+   "conditions": {
+    "real_mid": {
+     "greedy": " white",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 7.7499998807907104
+    },
+    "real_mid_a2": {
+     "greedy": " pearl",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 8.0
+    },
+    "early": {
+     "greedy": " pink",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.6875
+    },
+    "rand_mid_s0": {
+     "greedy": " red",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.3125
+    },
+    "rand_mid_s1": {
+     "greedy": " red",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.1250002384185791
+    },
+    "rand_mid_s2": {
+     "greedy": " red",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1875
+    }
+   },
+   "baseline": {
+    "greedy": " red",
+    "answer_correct": true,
+    "lp_answer": -1.5433154106140137,
+    "lp_swap_answer": -4.105815410614014
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "gem-source-pearl",
+   "conditions": {
+    "real_mid": {
+     "greedy": " diamond",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.218750238418579
+    },
+    "real_mid_a2": {
+     "greedy": " diamond",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.312499761581421
+    },
+    "early": {
+     "greedy": " pe",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.906249761581421
+    },
+    "rand_mid_s0": {
+     "greedy": " pearl",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0624997615814209
+    },
+    "rand_mid_s1": {
+     "greedy": " pearl",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.1875
+    },
+    "rand_mid_s2": {
+     "greedy": " pearl",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625004768371582
+    }
+   },
+   "baseline": {
+    "greedy": " pearl",
+    "answer_correct": false,
+    "lp_answer": -3.3064463138580322,
+    "lp_swap_answer": -7.931446075439453
+   },
+   "seconds": 0.66
+  },
+  {
+   "name": "greatwall-ocean",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Atlantic",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 7.9999996572732925
+    },
+    "real_mid_a2": {
+     "greedy": " Atlantic",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 8.312499806284904
+    },
+    "early": {
+     "greedy": " Atlantic",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 5.375
+    },
+    "rand_mid_s0": {
+     "greedy": " Pacific",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250005960464478
+    },
+    "rand_mid_s1": {
+     "greedy": " Pacific",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250011920928955
+    },
+    "rand_mid_s2": {
+     "greedy": " Pacific",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250017881393433
+    }
+   },
+   "baseline": {
+    "greedy": " Pacific",
+    "answer_correct": true,
+    "lp_answer": -0.7005263566970825,
+    "lp_swap_answer": -3.763026237487793
+   },
+   "seconds": 0.65
+  },
+  {
+   "name": "holiday-month-christmas2",
+   "conditions": {
+    "real_mid": {
+     "greedy": " April",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 14.999999821186066
+    },
+    "real_mid_a2": {
+     "greedy": " April",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 15.187500298023224
+    },
+    "early": {
+     "greedy": " December",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.9374999701976776
+    },
+    "rand_mid_s0": {
+     "greedy": " December",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250029802322388
+    },
+    "rand_mid_s1": {
+     "greedy": " December",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s2": {
+     "greedy": " December",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -8.940696716308594e-08
+    }
+   },
+   "baseline": {
+    "greedy": " December",
+    "answer_correct": true,
+    "lp_answer": -0.3077879548072815,
+    "lp_swap_answer": -6.995287895202637
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "instr-body-trumpet",
+   "conditions": {
+    "real_mid": {
+     "greedy": " chest",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.750000178813934
+    },
+    "real_mid_a2": {
+     "greedy": " head",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 8.812500178813934
+    },
+    "early": {
+     "greedy": " lips",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1875
+    },
+    "rand_mid_s0": {
+     "greedy": " lips",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250011920928955
+    },
+    "rand_mid_s1": {
+     "greedy": " lips",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250041723251343
+    },
+    "rand_mid_s2": {
+     "greedy": " lips",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250035762786865
+    }
+   },
+   "baseline": {
+    "greedy": " lips",
+    "answer_correct": true,
+    "lp_answer": -0.8708599209785461,
+    "lp_swap_answer": -7.5583600997924805
+   },
+   "seconds": 0.65
+  },
+  {
+   "name": "instr-hit-drums",
+   "conditions": {
+    "real_mid": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 11.625000476837158
+    },
+    "real_mid_a2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 11.765625953674316
+    },
+    "early": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.6875009536743164
+    },
+    "rand_mid_s0": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.1250004768371582
+    },
+    "rand_mid_s1": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.2500004768371582
+    },
+    "rand_mid_s2": {
+     "greedy": " a",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 9.5367431640625e-07
+    }
+   },
+   "baseline": {
+    "greedy": " a",
+    "answer_correct": false,
+    "lp_answer": -5.95285177230835,
+    "lp_swap_answer": -9.765352249145508
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "mars-color",
+   "conditions": {
+    "real_mid": {
+     "greedy": " blue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.9375
+    },
+    "real_mid_a2": {
+     "greedy": " blue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 4.5624998807907104
+    },
+    "early": {
+     "greedy": " blue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.37499988079071045
+    },
+    "rand_mid_s0": {
+     "greedy": " blue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.1920928955078125e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " blue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": -1.1920928955078125e-07
+    },
+    "rand_mid_s2": {
+     "greedy": " blue",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.125
+    }
+   },
+   "baseline": {
+    "greedy": " blue",
+    "answer_correct": false,
+    "lp_answer": -2.1842620372772217,
+    "lp_swap_answer": -1.5592620372772217
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "month-3-godof",
+   "conditions": {
+    "real_mid": {
+     "greedy": " love",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 9.624999761581421
+    },
+    "real_mid_a2": {
+     "greedy": " love",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 11.437499821186066
+    },
+    "early": {
+     "greedy": " war",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.687499761581421
+    },
+    "rand_mid_s0": {
+     "greedy": " war",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250008940696716
+    },
+    "rand_mid_s1": {
+     "greedy": " war",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18750017881393433
+    },
+    "rand_mid_s2": {
+     "greedy": " war",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06249997019767761
+    }
+   },
+   "baseline": {
+    "greedy": " war",
+    "answer_correct": true,
+    "lp_answer": -0.36678603291511536,
+    "lp_swap_answer": -6.054286003112793
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "organ-acid-stomach",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 12.062499523162842
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 12.624999642372131
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.125000238418579
+    },
+    "rand_mid_s0": {
+     "greedy": " stomach",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.062499284744262695
+    },
+    "rand_mid_s1": {
+     "greedy": " stomach",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0624995231628418
+    },
+    "rand_mid_s2": {
+     "greedy": " stomach",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.2500002384185791
+    }
+   },
+   "baseline": {
+    "greedy": " stomach",
+    "answer_correct": false,
+    "lp_answer": -2.554069757461548,
+    "lp_swap_answer": -8.741569519042969
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "organ-count-kidney2",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.375
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.375
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.25
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625002384185791
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": false,
+    "lp_answer": -2.1880245208740234,
+    "lp_swap_answer": -6.000524520874023
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "organ-location-brain",
+   "conditions": {
+    "real_mid": {
+     "greedy": " heart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 12.499999970197678
+    },
+    "real_mid_a2": {
+     "greedy": " heart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 12.187500208616257
+    },
+    "early": {
+     "greedy": " skull",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3749998211860657
+    },
+    "rand_mid_s0": {
+     "greedy": " skull",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250017881393433
+    },
+    "rand_mid_s1": {
+     "greedy": " skull",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06249988079071045
+    },
+    "rand_mid_s2": {
+     "greedy": " skull",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.18750014901161194
+    }
+   },
+   "baseline": {
+    "greedy": " skull",
+    "answer_correct": true,
+    "lp_answer": -0.4726281464099884,
+    "lp_swap_answer": -7.535128116607666
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "organ-location-heart",
+   "conditions": {
+    "real_mid": {
+     "greedy": " brain",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 9.75
+    },
+    "real_mid_a2": {
+     "greedy": " brain",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 10.0
+    },
+    "early": {
+     "greedy": " heart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.25
+    },
+    "rand_mid_s0": {
+     "greedy": " heart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.3125002384185791
+    },
+    "rand_mid_s1": {
+     "greedy": " heart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.1875002384185791
+    },
+    "rand_mid_s2": {
+     "greedy": " heart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625002384185791
+    }
+   },
+   "baseline": {
+    "greedy": " heart",
+    "answer_correct": false,
+    "lp_answer": -2.0560860633850098,
+    "lp_swap_answer": -5.43108606338501
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "osu-rival-mascot",
+   "conditions": {
+    "real_mid": {
+     "greedy": " bear",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.093750238418579
+    },
+    "real_mid_a2": {
+     "greedy": " bear",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.375
+    },
+    "early": {
+     "greedy": " bear",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.250000238418579
+    },
+    "rand_mid_s0": {
+     "greedy": " bear",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0625
+    },
+    "rand_mid_s1": {
+     "greedy": " bear",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.0625
+    },
+    "rand_mid_s2": {
+     "greedy": " bear",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    }
+   },
+   "baseline": {
+    "greedy": " bear",
+    "answer_correct": false,
+    "lp_answer": -6.3628458976745605,
+    "lp_swap_answer": -4.1128458976745605
+   },
+   "seconds": 0.65
+  },
+  {
+   "name": "paper-continent",
+   "conditions": {
+    "real_mid": {
+     "greedy": " France",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.812499761581421
+    },
+    "real_mid_a2": {
+     "greedy": " France",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 7.250000476837158
+    },
+    "early": {
+     "greedy": " Europe",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 1.6875
+    },
+    "rand_mid_s0": {
+     "greedy": " Asia",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " Asia",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " Asia",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18750011920928955
+    }
+   },
+   "baseline": {
+    "greedy": " Asia",
+    "answer_correct": true,
+    "lp_answer": -1.537949562072754,
+    "lp_swap_answer": -3.225449562072754
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "person-century-lincoln",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Napole",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 17.5
+    },
+    "real_mid_a2": {
+     "greedy": " Napole",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 17.812500059604645
+    },
+    "early": {
+     "greedy": " Civil",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.9375002384185791
+    },
+    "rand_mid_s0": {
+     "greedy": " Civil",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1250005066394806
+    },
+    "rand_mid_s1": {
+     "greedy": " Civil",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.2500002980232239
+    },
+    "rand_mid_s2": {
+     "greedy": " Civil",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 8.940696716308594e-08
+    }
+   },
+   "baseline": {
+    "greedy": " Civil",
+    "answer_correct": true,
+    "lp_answer": -0.4453302025794983,
+    "lp_swap_answer": -9.070330619812012
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "person-country-napoleon",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 12.875000417232513
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 13.062500417232513
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 3.1249999403953552
+    },
+    "rand_mid_s0": {
+     "greedy": " France",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 8.940696716308594e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " France",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3125002384185791
+    },
+    "rand_mid_s2": {
+     "greedy": " France",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.06250053644180298
+    }
+   },
+   "baseline": {
+    "greedy": " France",
+    "answer_correct": true,
+    "lp_answer": -0.951914370059967,
+    "lp_swap_answer": -9.57691478729248
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "person-country-shakespeare",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.375
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.625
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.25
+    },
+    "rand_mid_s0": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0625
+    },
+    "rand_mid_s1": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.25
+    }
+   },
+   "baseline": {
+    "greedy": " the",
+    "answer_correct": false,
+    "lp_answer": -4.5788655281066895,
+    "lp_swap_answer": -5.0163655281066895
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "person-firstname-darwin",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Einstein",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 16.312499716877937
+    },
+    "real_mid_a2": {
+     "greedy": " Einstein",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 16.56249989569187
+    },
+    "early": {
+     "greedy": " Charles",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.0624999850988388
+    },
+    "rand_mid_s0": {
+     "greedy": " Charles",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -4.172325134277344e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " Charles",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -4.470348358154297e-08
+    },
+    "rand_mid_s2": {
+     "greedy": " Charles",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0625
+    }
+   },
+   "baseline": {
+    "greedy": " Charles",
+    "answer_correct": true,
+    "lp_answer": -0.20879529416561127,
+    "lp_swap_answer": -7.021295070648193
+   },
+   "seconds": 0.62
+  },
+  {
+   "name": "person-firstname-einstein",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Isaac",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 13.000000417232513
+    },
+    "real_mid_a2": {
+     "greedy": " Newton",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 12.781250298023224
+    },
+    "early": {
+     "greedy": " Albert",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.9375002086162567
+    },
+    "rand_mid_s0": {
+     "greedy": " Albert",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1875
+    },
+    "rand_mid_s1": {
+     "greedy": " Albert",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3750002533197403
+    },
+    "rand_mid_s2": {
+     "greedy": " Albert",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500037252902985
+    }
+   },
+   "baseline": {
+    "greedy": " Albert",
+    "answer_correct": true,
+    "lp_answer": -0.20172816514968872,
+    "lp_swap_answer": -4.451728343963623
+   },
+   "seconds": 0.7
+  },
+  {
+   "name": "person-firstname-mozart",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Darwin",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 17.156250476837158
+    },
+    "real_mid_a2": {
+     "greedy": " Darwin",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 17.437500715255737
+    },
+    "early": {
+     "greedy": " Mozart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.4062502384185791
+    },
+    "rand_mid_s0": {
+     "greedy": " Mozart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.76837158203125e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " Mozart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.1250002384185791
+    },
+    "rand_mid_s2": {
+     "greedy": " Mozart",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.1249997615814209
+    }
+   },
+   "baseline": {
+    "greedy": " Mozart",
+    "answer_correct": false,
+    "lp_answer": -1.1036431789398193,
+    "lp_swap_answer": -9.228643417358398
+   },
+   "seconds": 0.67
+  },
+  {
+   "name": "person-firstname-newton",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Shakespeare",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 11.84375011920929
+    },
+    "real_mid_a2": {
+     "greedy": " Shakespeare",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 12.28125
+    },
+    "early": {
+     "greedy": " Isaac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.6875000596046448
+    },
+    "rand_mid_s0": {
+     "greedy": " Isaac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500029802322388
+    },
+    "rand_mid_s1": {
+     "greedy": " Isaac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.1874997615814209
+    },
+    "rand_mid_s2": {
+     "greedy": " Isaac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -1.1920928955078125e-07
+    }
+   },
+   "baseline": {
+    "greedy": " Isaac",
+    "answer_correct": true,
+    "lp_answer": -0.8306478261947632,
+    "lp_swap_answer": -4.830647945404053
+   },
+   "seconds": 0.64
+  },
+  {
+   "name": "person-firstname-shakespeare",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Wolfgang",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 17.718749850988388
+    },
+    "real_mid_a2": {
+     "greedy": " Wolfgang",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 17.718749523162842
+    },
+    "early": {
+     "greedy": " William",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 3.156249701976776
+    },
+    "rand_mid_s0": {
+     "greedy": " William",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.031249582767486572
+    },
+    "rand_mid_s1": {
+     "greedy": " William",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.15624922513961792
+    },
+    "rand_mid_s2": {
+     "greedy": " William",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.18750011920928955
+    }
+   },
+   "baseline": {
+    "greedy": " William",
+    "answer_correct": true,
+    "lp_answer": -0.4619763493537903,
+    "lp_swap_answer": -9.868226051330566
+   },
+   "seconds": 0.7
+  },
+  {
+   "name": "planet-3-moons",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": -0.5000000596046448
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -1.125
+    },
+    "early": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.0
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": false,
+    "lp_answer": -2.2766210436820984,
+    "lp_swap_answer": -1.5266210436820984
+   },
+   "seconds": 1.31
+  },
+  {
+   "name": "planet-rings-saturn2",
+   "conditions": {
+    "real_mid": {
+     "greedy": " red",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.312499284744263
+    },
+    "real_mid_a2": {
+     "greedy": " red",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.187499523162842
+    },
+    "early": {
+     "greedy": " rings",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.8124995231628418
+    },
+    "rand_mid_s0": {
+     "greedy": " rings",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12499964237213135
+    },
+    "rand_mid_s1": {
+     "greedy": " rings",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.06250035762786865
+    },
+    "rand_mid_s2": {
+     "greedy": " rings",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.1250009536743164
+    }
+   },
+   "baseline": {
+    "greedy": " rings",
+    "answer_correct": true,
+    "lp_answer": -1.1806435585021973,
+    "lp_swap_answer": -8.555643081665039
+   },
+   "seconds": 0.68
+  },
+  {
+   "name": "rhyme-chair-flag",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Florida",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.9374997615814209
+    },
+    "real_mid_a2": {
+     "greedy": " Florida",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.9374997615814209
+    },
+    "early": {
+     "greedy": " California",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3124997615814209
+    },
+    "rand_mid_s0": {
+     "greedy": " California",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0625
+    },
+    "rand_mid_s1": {
+     "greedy": " California",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -2.384185791015625e-07
+    },
+    "rand_mid_s2": {
+     "greedy": " California",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.1874997615814209
+    }
+   },
+   "baseline": {
+    "greedy": " California",
+    "answer_correct": true,
+    "lp_answer": -2.640054941177368,
+    "lp_swap_answer": -4.140054702758789
+   },
+   "seconds": 0.65
+  },
+  {
+   "name": "rhyme-rain-neighbor",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Belgium",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.625000476837158
+    },
+    "real_mid_a2": {
+     "greedy": " Belgium",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 3.0
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.5
+    },
+    "rand_mid_s0": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.12499988079071045
+    },
+    "rand_mid_s1": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.0
+    }
+   },
+   "baseline": {
+    "greedy": " the",
+    "answer_correct": false,
+    "lp_answer": -3.4144375324249268,
+    "lp_swap_answer": -1.6644375324249268
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "rhyme-spoon-orbit",
+   "conditions": {
+    "real_mid": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -1.0
+    },
+    "real_mid_a2": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -1.3750001192092896
+    },
+    "early": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s0": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 1.1920928955078125e-07
+    },
+    "rand_mid_s2": {
+     "greedy": " '",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.375
+    }
+   },
+   "baseline": {
+    "greedy": " '",
+    "answer_correct": false,
+    "lp_answer": -2.2447519302368164,
+    "lp_swap_answer": -1.8697519302368164
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "season-next-winter",
+   "conditions": {
+    "real_mid": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.562500238418579
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.625000238418579
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.3750004768371582
+    },
+    "rand_mid_s0": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.1249997615814209
+    },
+    "rand_mid_s1": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.1249995231628418
+    },
+    "rand_mid_s2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.1249997615814209
+    }
+   },
+   "baseline": {
+    "greedy": " the",
+    "answer_correct": false,
+    "lp_answer": -2.0250461101531982,
+    "lp_swap_answer": -4.275046348571777
+   },
+   "seconds": 0.65
+  },
+  {
+   "name": "spaceneedle-border",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Pennsylvania",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 8.125000238418579
+    },
+    "real_mid_a2": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 8.6875
+    },
+    "early": {
+     "greedy": " the",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.875000238418579
+    },
+    "rand_mid_s0": {
+     "greedy": " Canada",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -0.18749964237213135
+    },
+    "rand_mid_s1": {
+     "greedy": " Canada",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.1920928955078125e-07
+    },
+    "rand_mid_s2": {
+     "greedy": " Canada",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0625002384185791
+    }
+   },
+   "baseline": {
+    "greedy": " Canada",
+    "answer_correct": true,
+    "lp_answer": -1.1127698421478271,
+    "lp_swap_answer": -7.987770080566406
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "spider-legs",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.249999865889549
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.374999865889549
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 1.0000000447034836
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 4.470348358154297e-08
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500014901161194
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 4.470348358154297e-08
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -0.7464891821146011,
+    "lp_swap_answer": -4.1214892864227295
+   },
+   "seconds": 1.24
+  },
+  {
+   "name": "sport-equip-tennis",
+   "conditions": {
+    "real_mid": {
+     "greedy": " golf",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 17.187500178813934
+    },
+    "real_mid_a2": {
+     "greedy": " golf",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 17.624999940395355
+    },
+    "early": {
+     "greedy": " tennis",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 2.437499701976776
+    },
+    "rand_mid_s0": {
+     "greedy": " racket",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -2.384185791015625e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " racket",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.3124995827674866
+    },
+    "rand_mid_s2": {
+     "greedy": " racket",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.2500000596046448
+    }
+   },
+   "baseline": {
+    "greedy": " racket",
+    "answer_correct": true,
+    "lp_answer": -0.9126637578010559,
+    "lp_swap_answer": -8.475163459777832
+   },
+   "seconds": 0.67
+  },
+  {
+   "name": "super-populous-capital",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Delhi",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 10.562499523162842
+    },
+    "real_mid_a2": {
+     "greedy": " Delhi",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 11.531250476837158
+    },
+    "early": {
+     "greedy": " New",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 4.187500238418579
+    },
+    "rand_mid_s0": {
+     "greedy": " Tokyo",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.125
+    },
+    "rand_mid_s1": {
+     "greedy": " Tokyo",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.25
+    },
+    "rand_mid_s2": {
+     "greedy": " Tokyo",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.1874997615814209
+    }
+   },
+   "baseline": {
+    "greedy": " Tokyo",
+    "answer_correct": false,
+    "lp_answer": -2.296257972717285,
+    "lp_swap_answer": -4.171257972717285
+   },
+   "seconds": 0.61
+  },
+  {
+   "name": "super-smallest-continent",
+   "conditions": {
+    "real_mid": {
+     "greedy": " Asia",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 2.812500089406967
+    },
+    "real_mid_a2": {
+     "greedy": " Asia",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 3.2499999701976776
+    },
+    "early": {
+     "greedy": " Asia",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.3750000298023224
+    },
+    "rand_mid_s0": {
+     "greedy": " Asia",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.12499994039535522
+    },
+    "rand_mid_s1": {
+     "greedy": " Asia",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s2": {
+     "greedy": " Asia",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": -2.9802322387695312e-08
+    }
+   },
+   "baseline": {
+    "greedy": " Asia",
+    "answer_correct": false,
+    "lp_answer": -1.697312593460083,
+    "lp_swap_answer": -0.4473125636577606
+   },
+   "seconds": 0.63
+  },
+  {
+   "name": "tree-product-oak",
+   "conditions": {
+    "real_mid": {
+     "greedy": " pine",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.999999642372131
+    },
+    "real_mid_a2": {
+     "greedy": " pine",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 6.656249642372131
+    },
+    "early": {
+     "greedy": " ac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.7187496423721313
+    },
+    "rand_mid_s0": {
+     "greedy": " ac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.21874940395355225
+    },
+    "rand_mid_s1": {
+     "greedy": " ac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.062499403953552246
+    },
+    "rand_mid_s2": {
+     "greedy": " ac",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12499916553497314
+    }
+   },
+   "baseline": {
+    "greedy": " ac",
+    "answer_correct": true,
+    "lp_answer": -1.9609454870224,
+    "lp_swap_answer": -8.273445129394531
+   },
+   "seconds": 0.68
+  },
+  {
+   "name": "vehicle-power-bicycle",
+   "conditions": {
+    "real_mid": {
+     "greedy": " own",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.2500001192092896
+    },
+    "real_mid_a2": {
+     "greedy": " own",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 5.6875001192092896
+    },
+    "early": {
+     "greedy": " legs",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.12500035762786865
+    },
+    "rand_mid_s0": {
+     "greedy": " muscles",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.37500035762786865
+    },
+    "rand_mid_s1": {
+     "greedy": " muscles",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": 0.125
+    },
+    "rand_mid_s2": {
+     "greedy": " muscles",
+     "flip": false,
+     "still_answer": false,
+     "margin_shift": -0.3124997615814209
+    }
+   },
+   "baseline": {
+    "greedy": " muscles",
+    "answer_correct": false,
+    "lp_answer": -1.5834263563156128,
+    "lp_swap_answer": -7.145926475524902
+   },
+   "seconds": 0.71
+  },
+  {
+   "name": "violin-strings",
+   "conditions": {
+    "real_mid": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 2.5000001192092896
+    },
+    "real_mid_a2": {
+     "greedy": " ",
+     "flip": true,
+     "still_answer": false,
+     "margin_shift": 2.7499998807907104
+    },
+    "early": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.25
+    },
+    "rand_mid_s0": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": -1.1920928955078125e-07
+    },
+    "rand_mid_s1": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.0
+    },
+    "rand_mid_s2": {
+     "greedy": " ",
+     "flip": false,
+     "still_answer": true,
+     "margin_shift": 0.125
+    }
+   },
+   "baseline": {
+    "greedy": " ",
+    "answer_correct": true,
+    "lp_answer": -2.0205674171447754,
+    "lp_swap_answer": -2.8955674171447754
+   },
+   "seconds": 1.27
+  }
+ ]
+}
