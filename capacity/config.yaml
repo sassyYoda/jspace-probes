@@ -1,0 +1,19 @@
+model: Qwen/Qwen3.5-4B
+lens_repo: neuronpedia/jacobian-lens
+lens_file: qwen3.5-4b/jlens/Salesforce-wikitext/Qwen3.5-4B_jacobian_lens_n1000.pt
+device: auto               # cuda / mps / cpu auto-detected; or set explicitly
+dtype: bfloat16
+capacity_json: data/experiments/capacity.json   # relative to JLENS_REPO (default <repo>/vendor/jacobian-lens)
+families: [names, countries, surnames, cities]
+Ns: [2, 4, 8, 12, 16, 24, 32, 48, 64]
+seeds: [0, 1, 2]
+prompts_per_cell: 12          # half probe-present, half probe-absent
+n_controls_per_prompt: 16     # matched non-listed same-family words (null)
+mid_band_layers: [12, 22]     # inclusive; paper mid band, harness-validated
+literal_mask_radius: 1        # mask positions t-1..t+1 around literal occurrences
+threshold_percentile: 95      # of control (non-listed word) presence, hold prompts
+bootstrap_iters: 2000
+plateau_C_range: [5, 50]      # pre-registered plausible capacity window
+low_N_band: [2, 4, 8]         # d' reference level for the behavioral-bind test
+prompt_hold: "Remember this list: {LIST}. Question: was {PROBE} in the list? Answer (yes/no):"
+prompt_nohold: "Here are some words that appeared in a document: {LIST}. The document was long and nothing else about it was recorded."

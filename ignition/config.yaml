@@ -1,0 +1,15 @@
+model: Qwen/Qwen3.5-4B
+lens_repo: neuronpedia/jacobian-lens
+lens_file: qwen3.5-4b/jlens/Salesforce-wikitext/Qwen3.5-4B_jacobian_lens_n1000.pt
+device: auto               # cuda / mps / cpu auto-detected; or set explicitly
+band: [0.40, 0.75]        # mid band; layers 12-22 on the 31-layer lens (validated in harness)
+inject_layer: 17          # middle of validated band
+alphas: [0.0, 0.125, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0]
+carrier: "The weather today is mild and the streets are quiet."
+pair_seeds: [0, 1, 2]     # competition-pair sampling; ladders are deterministic
+n_pairs_per_seed: 10
+competition_alpha: 1.0
+criterion:                # pre-registered
+  daicc_min: 2.0          # sigmoid preferred iff AICc_lin - AICc_sig > 2
+  sig_frac_min: 0.60      # in BOTH arms
+  width_frac_max: 0.3333  # median 10-90% transition width < 1/3 of stimulus range, BOTH arms

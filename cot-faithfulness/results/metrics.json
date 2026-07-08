@@ -1,0 +1,183 @@
+{
+ "manifest": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "lens": "qwen2.5-7b-it/jlens/Salesforce-wikitext/Qwen2.5-7B-Instruct_jacobian_lens.pt",
+  "device": "mps",
+  "band_layers": [
+   11,
+   19
+  ],
+  "lens_source_layers": [
+   0,
+   26
+  ],
+  "seed": 0,
+  "k_ablate": 10,
+  "random_seeds": [
+   0,
+   1
+  ],
+  "chat_sanity": {
+   "question": {
+    "p": 0.2205273061990738,
+    "layer": 18,
+    "pos": 29
+   },
+   "statement": {
+    "p": 0.6221585869789124,
+    "layer": 16,
+    "pos": 29
+   }
+  },
+  "noop_check": true,
+  "caveat_lens_corpus": "lens fitted on raw wikitext, applied to chat-templated text (sanity-checked above)",
+  "base_model_control": "SKIPPED: no Qwen2.5-7B base lens in neuronpedia/jacobian-lens (only -it); future work",
+  "python": "3.13.5",
+  "torch": "2.12.1",
+  "transformers": "5.13.0",
+  "platform": "macOS-26.5-arm64-arm-64bit-Mach-O",
+  "wall_clock_s": 4006.2
+ },
+ "phase1": {
+  "counts": {
+   "n_unhinted_generated": 149,
+   "n_kept_correct": 100,
+   "budget_cut": false,
+   "cue2_run": true,
+   "mean_gen_s": 11.902836517999637,
+   "mean_gen_tok": 309.5503355704698
+  },
+  "two_by_two": {
+   "stanford": {
+    "n": 100,
+    "no_parse": 1,
+    "flip0_mention0": 52,
+    "flip0_mention1": 27,
+    "flip1_mention0": 13,
+    "flip1_mention1": 8
+   },
+   "experience": {
+    "n": 87,
+    "no_parse": 0,
+    "flip0_mention0": 54,
+    "flip0_mention1": 26,
+    "flip1_mention0": 3,
+    "flip1_mention1": 4
+   }
+  },
+  "n_unfaithful_biased": 16
+ },
+ "phase2": {
+  "aucs": {
+   "a_surface_jlens": {
+    "auc": 1.0,
+    "n": 16
+   },
+   "a_surface_logitlens": {
+    "auc": 0.43359375,
+    "n": 16
+   },
+   "b_concepts_jlens": {
+    "auc": 0.46484375,
+    "n": 16
+   },
+   "b_concepts_logitlens": {
+    "auc": 0.4921875,
+    "n": 16
+   }
+  }
+ },
+ "phase3": {
+  "summary": {
+   "baseline": {
+    "n": 16,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "real": {
+    "n": 16,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "content": {
+    "n": 16,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "random0": {
+    "n": 16,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "random1": {
+    "n": 16,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   }
+  },
+  "criterion": {
+   "reversion_real": 0.0,
+   "reversion_random_mean": 0.0,
+   "gap": 0.0,
+   "gap_pass": false,
+   "reversion_gt_disruption": false,
+   "signal": false
+  }
+ },
+ "phase3_supplementary_nocot": {
+  "note": "POST-HOC, not pre-registered. No-CoT direct-answer probe: copy shortcut removed. Summary restricted to items where the no-CoT hinted baseline equals the hinted letter.",
+  "n_items": 16,
+  "n_nocot_baseline_takes_hint": 11,
+  "n_nocot_unhinted_correct": 12,
+  "summary_on_hint_taking_items": {
+   "real": {
+    "n": 11,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "disruption": 0.0,
+    "destroyed_top1_not_letter": 0.0
+   },
+   "content": {
+    "n": 11,
+    "reversion": 0.09090909090909091,
+    "unchanged": 0.9090909090909091,
+    "other_letter": 0.0,
+    "disruption": 0.0,
+    "destroyed_top1_not_letter": 0.0
+   },
+   "random0": {
+    "n": 11,
+    "reversion": 0.09090909090909091,
+    "unchanged": 0.9090909090909091,
+    "other_letter": 0.0,
+    "disruption": 0.0,
+    "destroyed_top1_not_letter": 0.0
+   },
+   "random1": {
+    "n": 11,
+    "reversion": 0.0,
+    "unchanged": 0.9090909090909091,
+    "other_letter": 0.09090909090909091,
+    "disruption": 0.09090909090909091,
+    "destroyed_top1_not_letter": 0.0
+   }
+  },
+  "wall_clock_s": 7.0
+ }
+}

@@ -1,0 +1,44 @@
+# Idea G (mini): refit the Qwen3-1.7B J-lens on a code corpus, re-run Idea A's
+# cross-model universality comparison to kill the shared-wikitext-corpus confound.
+
+refit_model:
+  name: qwen3-1.7b
+  hf_repo: Qwen/Qwen3-1.7B
+  hf_revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  n_layers: 28
+
+# Fit corpus: python code, maximally different from wikitext-103.
+# bigcode/the-stack-smol is GATED on the Hub (checked 2026-07-07); fallback:
+corpus:
+  hf_dataset: codeparrot/codeparrot-clean-valid
+  split: train
+  streaming: true
+  text_field: content
+  # keep only documents whose first max_seq_len tokens are a FULL 128-token
+  # window (matches the paper's "128-token sequences")
+  max_seq_len: 128
+  n_prompts_target: 100
+  n_prompts_floor: 30          # convergence floor if the time budget forces a cut
+
+fit:
+  # exactly the layers Idea A's frac_to_layer maps fractions 0.1..0.9 onto for
+  # qwen3-1.7b (see idea-A results/metrics.json layer_map) -> identical
+  # fraction->layer mapping in the comparison
+  source_layers: [3, 6, 8, 11, 14, 17, 20, 22, 25]
+  dim_batch: 16                # decided by --bench (8 vs 16 on one real prompt)
+  dtype: bfloat16              # walkthrough.ipynb fits in bf16
+  device: auto                 # cuda / mps / cpu auto-detected; or set explicitly
+  checkpoint_every: 2          # ~64 MB ckpt (9 layers fp32), ~min/prompt on MPS:
+                               # write cost is negligible, losing prompts is not.
+  time_budget_hours: 6.0
+  bench_prompts: 3             # measure s/prompt on these, then extrapolate
+
+comparison:
+  # everything else (models, fractions, baselines, seeds) is inherited from
+  # ../universality/config.yaml; only the qwen lens file is replaced
+  refit_lens_file: results/qwen3-1.7b_codeparrot_lens.pt
+  rsa_tolerance: 0.1           # pre-registered: |RSA_code - RSA_wiki| <= 0.1 at
+                               # mid fractions, and RSA_code still far above the
+                               # unembedding baseline => confound dead
+
+seed: 0
