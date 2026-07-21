@@ -56,13 +56,20 @@ class JVecs:
         return {l: (self.vec(l, word_from), self.vec(l, word_to)) for l in layers}
 
 
+def _qr_q(t):
+    # torch.linalg.qr needs CPU LAPACK, absent in some ROCm builds; numpy always works
+    import numpy as np
+    q, _ = np.linalg.qr(t.detach().cpu().double().numpy())
+    return torch.from_numpy(q).to(t.dtype)
+
+
 def random_pairs(layers, real_pairs, d_model, seed):
     """Random orthonormal-frame pairs matching each real pair's mutual angle,
     so the applied delta norm per unit coefficient matches."""
     g = torch.Generator().manual_seed(seed)
     out = {}
     for l in layers:
-        q, _ = torch.linalg.qr(torch.randn(d_model, 2, generator=g))
+        q = _qr_q(torch.randn(d_model, 2, generator=g))
         cos = (real_pairs[l][0] @ real_pairs[l][1]).clamp(-1, 1)
         sin = (1 - cos**2).sqrt()
         out[l] = (q[:, 0], cos * q[:, 0] + sin * q[:, 1])
@@ -122,7 +129,7 @@ class InterventionHooks:
         """dirs: {layer: [d, k] or [d]} — orthonormalized via QR before projecting out."""
         for l, v in dirs.items():
             v = v.reshape(v.shape[0], -1).float()
-            q, _ = torch.linalg.qr(v)
+            q = _qr_q(v)
             self.add(l, self._ablate_op(l, q, positions))
 
     def _ablate_op(self, l, q, positions):
