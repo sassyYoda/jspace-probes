@@ -1,0 +1,25 @@
+tag: llama3.1-8b
+model: meta-llama/Llama-3.1-8B
+lens_repo: neuronpedia/jacobian-lens
+lens_file: llama3.1-8b/jlens/Salesforce-wikitext/Llama-3.1-8B_jacobian_lens.pt
+device: auto                       # cuda / mps / cpu auto-detected; measured runs used cuda (ROCm)
+expect_bos_prepend: 1              # llama-3 prepends <|begin_of_text|>; gemma-style BOS handling
+expect_softcap: false              # no final logit softcap
+band: [0.40, 0.75]
+inject_layer: auto
+alphas: [0.0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.5, 0.625, 0.75, 1.0, 1.25, 1.5, 2.0, 3.0]
+carriers:
+  - "The weather today is mild and the streets are quiet."
+  - "The afternoon passed slowly and nothing much happened."
+  - "The shelves were dusty and the hallway stayed empty."
+competition:
+  n_residents: 20
+  alpha: 1.0                       # pre-registered primary matrix
+  secondary_alphas: [0.25]         # robustness matrix (random control floors Y at 1.0 on 8B)
+  n_random_seeds: 2
+  evocability_threshold: 0.05
+criterion:
+  daicc_min: 2.0
+  sig_frac_min: 0.60
+  width_frac_max: 0.3333
+overdrive_margin: 0.10

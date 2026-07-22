@@ -1,0 +1,187 @@
+{
+ "manifest": {
+  "task": "Idea I GPU growth: seeds 2+3, 400 items each, both cues, MI300X",
+  "date": "2026-07-21",
+  "node": "1x AMD MI300X VF 192GB, ROCm 7.2.4, torch 2.11.0 ROCm, transformers 5.12.1, datasets 5.0.0 (hostname/path redacted)",
+  "model": "Qwen/Qwen2.5-7B-Instruct (bf16, cuda/ROCm)",
+  "lens": "qwen2.5-7b-it/jlens/Salesforce-wikitext/Qwen2.5-7B-Instruct_jacobian_lens.pt",
+  "pipeline": "run_gpu.py = minimal adaptation of run_ext.py (--seed, cumulative blacklist, cuda, OOM backoff, s/gen benchmark); classification/regex/heuristics imported verbatim from run.py",
+  "exclusion_verification": "VERIFY1 PASS: node rebuild of the seed-1 ext pool matches laptop ext_pool.json exactly (400/400 items) -> seed-0/1 exclusion replication is deterministic cross-platform",
+  "blacklists": "pool_s2.json: 550 keys (seed-0 first 150 + seed-1 pool 400); pool_s3.json: 950 keys (+ seed-2 pool 400); recorded as sha1 lists under blacklist_sha1",
+  "idx_offsets": {
+   "seed2": 20000,
+   "seed3": 30000
+  },
+  "noop_check": true,
+  "chat_lens_sanity": "not re-run on node (validated in the original local run; same model+lens)",
+  "redaction_note": "remote hostname and absolute working-directory paths redacted for release; all result-bearing fields unchanged"
+ },
+ "benchmark": {
+  "first10_s_per_gen": 6.05,
+  "first10_tok_per_s": 45.9,
+  "first10_mean_new_tok": 278,
+  "overall_s_per_gen": 5.88,
+  "n_generations_total": 1914,
+  "mps_laptop_reference_s_per_gen": 12.0,
+  "note": "GPU co-loaded ~58% by unrelated co-running experiments throughout"
+ },
+ "wall_clock": {
+  "gen_seed2_s": 5698,
+  "gen_seed3_s": 5560,
+  "driver_total": "3h08m (18:03:32 -> 21:11:37 UTC, incl. pools+verify+builds)",
+  "remote_analysis": "detect 26s + revert 39s + finalize <1s (plus ~2 min model/lens loads each)"
+ },
+ "per_seed_yields": {
+  "seed2": {
+   "n_pool": 400,
+   "n_kept_correct": 269,
+   "n_unfaithful_biased_new": 19,
+   "n_unfaithful_under_both_cues": 3,
+   "per_cue_selected": {
+    "stanford": 9,
+    "experience": 10
+   },
+   "unfaithful_rate_of_kept": {
+    "stanford": 0.033,
+    "experience": 0.048
+   },
+   "mention_among_flips": {
+    "stanford": "17/26 = 0.65",
+    "experience": "7/20 = 0.35"
+   },
+   "two_by_two": {
+    "stanford": {
+     "n": 269,
+     "no_parse": 2,
+     "flip0_mention0": 164,
+     "flip0_mention1": 79,
+     "flip1_mention0": 9,
+     "flip1_mention1": 17
+    },
+    "experience": {
+     "n": 269,
+     "no_parse": 4,
+     "flip0_mention0": 168,
+     "flip0_mention1": 81,
+     "flip1_mention0": 13,
+     "flip1_mention1": 7
+    }
+   }
+  },
+  "seed3": {
+   "n_pool": 400,
+   "n_kept_correct": 288,
+   "n_unfaithful_biased_new": 21,
+   "n_unfaithful_under_both_cues": 10,
+   "per_cue_selected": {
+    "stanford": 18,
+    "experience": 3
+   },
+   "unfaithful_rate_of_kept": {
+    "stanford": 0.063,
+    "experience": 0.045
+   },
+   "mention_among_flips": {
+    "stanford": "23/41 = 0.56",
+    "experience": "14/27 = 0.52"
+   },
+   "two_by_two": {
+    "stanford": {
+     "n": 288,
+     "no_parse": 5,
+     "flip0_mention0": 174,
+     "flip0_mention1": 73,
+     "flip1_mention0": 18,
+     "flip1_mention1": 23
+    },
+    "experience": {
+     "n": 288,
+     "no_parse": 2,
+     "flip0_mention0": 171,
+     "flip0_mention1": 90,
+     "flip1_mention0": 13,
+     "flip1_mention1": 14
+    }
+   }
+  },
+  "seed_dependence_datapoint": "stanford-cue unfaithful rate of kept across seeds 0/1/2/3: 13.0% / 4.6% / 3.3% / 6.3%"
+ },
+ "pooled_projection": {
+  "n_unfaithful_orig_seed0": 16,
+  "n_unfaithful_ext_seed1": 15,
+  "n_unfaithful_gpu_seed2": 19,
+  "n_unfaithful_gpu_seed3": 21,
+  "projected_pooled_n": 71,
+  "target_met": "71 >= 50"
+ },
+ "new_only_analysis_remote": {
+  "note": "detection+reversion run on the GPU machine on the 40 NEW (seed 2+3) unfaithful items alone; the pooled n=71 re-analysis (metrics_pooled71.json) was run later on a single local machine",
+  "detection_auc": {
+   "a_surface_jlens": {
+    "auc": 1.0,
+    "n": 40,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "a_surface_logitlens": {
+    "auc": 0.543,
+    "n": 40,
+    "ci95": [
+     0.499,
+     0.596
+    ]
+   },
+   "b_concepts_jlens": {
+    "auc": 0.6025,
+    "n": 40,
+    "ci95": [
+     0.546,
+     0.673
+    ]
+   },
+   "b_concepts_logitlens": {
+    "auc": 0.494,
+    "n": 40,
+    "ci95": [
+     0.427,
+     0.567
+    ]
+   }
+  },
+  "flag": "b_concepts_jlens new-only AUC 0.6025 sits marginally ABOVE the 0.6 chance band edge (CI lower 0.546 > 0.5, CI upper 0.673 < 0.7 pre-reg bar). Watch this in the pooled n=71 re-analysis.",
+  "reversion": {
+   "real": 0.0,
+   "random0": 0.0,
+   "random1": 0.025,
+   "content": 0.0,
+   "gap_real_minus_random_mean": -0.0125,
+   "signal": false,
+   "note": "null replicates on new items: nothing reverts, nothing destroyed"
+  }
+ },
+ "files": {
+  "local_new": [
+   "results/gen_cache_gpu_s2.jsonl",
+   "results/gen_cache_gpu_s3.jsonl",
+   "results/pool_s2.json",
+   "results/pool_s3.json",
+   "results/phase1_s2.json",
+   "results/phase1_s3.json",
+   "results/phase2_gpu.json",
+   "results/phase3_gpu.json",
+   "results/metrics_gpu.json",
+   "results/gpu_growth_summary.json",
+   "run_gpu.py"
+  ],
+  "remote": "run outputs mirrored on the GPU machine (absolute paths redacted; same filenames as local_new plus per-seed gen/analysis logs)",
+  "untouched": "all pre-existing results files (metrics.json, metrics_ext.json, items.jsonl, gen_cache*.jsonl, ...)"
+ },
+ "deviations": [
+  "Gen caches kept as gen_cache_gpu_s2.jsonl + gen_cache_gpu_s3.jsonl (two per-seed files) instead of one merged gen_cache_gpu.jsonl.",
+  "Seed-3 pool additionally excludes the seed-2 pool (beyond seeds 0/1) so all four pools are base-question disjoint for pooling; recorded in pool_s3.json blacklist_sha1.",
+  "Qwen2.5-7B-Instruct was downloaded (~15GB) at run start rather than prefetched (minutes, overlapped with setup).",
+  "Remote detect/revert used this repo's harness (includes the ROCm numpy-QR fix); the no-CoT supplementary probe was run only in the later single-machine pooled n=71 analysis."
+ ]
+}

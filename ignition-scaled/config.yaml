@@ -1,0 +1,31 @@
+tag: qwen3-8b
+model: Qwen/Qwen3-8B
+lens_repo: neuronpedia/jacobian-lens
+lens_file: qwen3-8b/jlens/Salesforce-wikitext/Qwen3-8B_jacobian_lens.pt
+device: auto                       # cuda / mps / cpu auto-detected; measured runs used cuda (ROCm)
+expect_bos_prepend: 0              # Qwen3 prepends nothing (asserted at runtime)
+expect_softcap: false              # no final logit softcap (asserted)
+band: [0.40, 0.75]                 # fractions of lens source layers (same convention as 4B/gemma runs)
+inject_layer: auto                 # band midpoint, computed at runtime
+# Finer 15-point alpha grid (resolves transition sharpness + over-driving regime)
+alphas: [0.0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.5, 0.625, 0.75, 1.0, 1.25, 1.5, 2.0, 3.0]
+# 3 seeds of carrier-prompt selection: seed = carrier. Carrier 0 is the original
+# (comparability anchor); 1 and 2 are new neutral sentences, verified concept-free.
+carriers:
+  - "The weather today is mild and the streets are quiet."
+  - "The afternoon passed slowly and nothing much happened."
+  - "The shelves were dusty and the hallway stayed empty."
+competition:
+  n_residents: 20                  # fixed subset chosen for high evocability (pilot below)
+  alpha: 1.0                       # pre-registered primary matrix
+  secondary_alphas: [0.25]         # robustness matrix (random control floors Y at 1.0 on 8B)
+  n_random_seeds: 2                # dY_random averaged over 2 norm-matched random directions
+  evocability_threshold: 0.05      # resident baseline presence must exceed this
+  # resident carrier template: countries "The story was about {name}." /
+  # nouns "The story was about the {name}."
+criterion:                         # pre-registered
+  daicc_min: 2.0                   # sigmoid preferred iff IC_lin - IC_sig > 2 (AICc primary, AIC secondary)
+  sig_frac_min: 0.60
+  width_frac_max: 0.3333           # PRIMARY scaled test: median 10-90% transition width
+                                   # (over all arm-2 sigmoid fits, concept x carrier) < 1/3 of alpha range
+overdrive_margin: 0.10             # over-driven iff peak p exceeds p(alpha_max) by > margin, peak not at alpha_max

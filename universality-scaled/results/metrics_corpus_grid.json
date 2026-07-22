@@ -1,0 +1,1459 @@
+{
+ "manifest": {
+  "timestamp": "2026-07-21T20:27:38",
+  "wall_clock_s": 366.1,
+  "n_shared_concepts": 507,
+  "rsa_tolerance": 0.1,
+  "verdict_rule": "at mid fractions: |RSA_refit - RSA_wiki| <= 0.1 AND margin over unembed > max(0.1, shuffled spread)",
+  "refit_lenses": {
+   "qwen3-1.7b|chat": {
+    "n_prompts": 100,
+    "source_layers": [
+     3,
+     6,
+     8,
+     11,
+     14,
+     17,
+     20,
+     22,
+     25
+    ],
+    "lens_file": "qwen3-1.7b_ultrachat_lens.pt"
+   },
+   "qwen3-1.7b|code": {
+    "n_prompts": 100,
+    "source_layers": [
+     3,
+     6,
+     8,
+     11,
+     14,
+     17,
+     20,
+     22,
+     25
+    ],
+    "lens_file": "qwen3-1.7b_codeparrot_lens.pt"
+   },
+   "gemma-2-2b|code": {
+    "n_prompts": 100,
+    "source_layers": [
+     3,
+     5,
+     8,
+     10,
+     13,
+     16,
+     18,
+     21,
+     23
+    ],
+    "lens_file": "gemma-2-2b_codeparrot_lens.pt"
+   },
+   "gemma-2-2b|wiki100": {
+    "n_prompts": 100,
+    "source_layers": [
+     3,
+     5,
+     8,
+     10,
+     13,
+     16,
+     18,
+     21,
+     23
+    ],
+    "lens_file": "gemma-2-2b_wikitext100_lens.pt"
+   }
+  },
+  "chat_corpus_note": "lmsys/lmsys-chat-1m gated (403); used HuggingFaceH4/ultrachat_200k train_sft user turns"
+ },
+ "fractions": [
+  0.1,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.8,
+  0.9
+ ],
+ "mid_fractions": [
+  0.4,
+  0.5,
+  0.6,
+  0.7
+ ],
+ "corpus_grid": {
+  "qwen3-1.7b|chat": {
+   "rows": {
+    "gpt2-small": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7880725956654647,
+      "0.2": 0.8134891137548352,
+      "0.3": 0.8333740504097317,
+      "0.4": 0.8512500118092406,
+      "0.5": 0.8509473277414228,
+      "0.6": 0.8473862795890463,
+      "0.7": 0.7550765026634169,
+      "0.8": 0.8371412100906968,
+      "0.9": 0.8151289168402934
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8728337084015116,
+       "rsa_refit_lens": 0.8512500118092406,
+       "delta": -0.021583696592270996,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.2431526925917714,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.868223964341287,
+       "rsa_refit_lens": 0.8509473277414228,
+       "delta": -0.017276636599864226,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.24285000852395355,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8709272601190577,
+       "rsa_refit_lens": 0.8473862795890463,
+       "delta": -0.023540980530011413,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.2392889603715771,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7930067119937423,
+       "rsa_refit_lens": 0.7550765026634169,
+       "delta": -0.037930209330325426,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.14697918344594763,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "qwen3-8b": {
+     "cross_family": false,
+     "rsa_j_all_fracs": {
+      "0.1": 0.8501238629100885,
+      "0.2": 0.860901458542681,
+      "0.3": 0.890214897468807,
+      "0.4": 0.8837045295703625,
+      "0.5": 0.9151724101719476,
+      "0.6": 0.9303895499812976,
+      "0.7": 0.9035483833531348,
+      "0.8": 0.9217703609511706,
+      "0.9": 0.8820893850433129
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.939999263432004,
+       "rsa_refit_lens": 0.8837045295703625,
+       "delta": -0.05629473386164152,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": 0.04415725942042237,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.9485988224059453,
+       "rsa_refit_lens": 0.9151724101719476,
+       "delta": -0.03342641223399767,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": 0.07562514002200749,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.9460074926345493,
+       "rsa_refit_lens": 0.9303895499812976,
+       "delta": -0.01561794265325167,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": 0.09084227983135751,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.9299897295616636,
+       "rsa_refit_lens": 0.9035483833531348,
+       "delta": -0.026441346208528782,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": 0.06400111320319468,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "gemma-2-2b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7612631225455039,
+      "0.2": 0.7954297408771331,
+      "0.3": 0.7774683193273891,
+      "0.4": 0.8035263737981759,
+      "0.5": 0.781609369562601,
+      "0.6": 0.8217349293845796,
+      "0.7": 0.764760014670498,
+      "0.8": 0.7315010374549064,
+      "0.9": 0.7176823561044854
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8150949472189899,
+       "rsa_refit_lens": 0.8035263737981759,
+       "delta": -0.011568573420813966,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.2124388161707279,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.782827666196072,
+       "rsa_refit_lens": 0.781609369562601,
+       "delta": -0.001218296633471061,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.19052181193515294,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7876138617972781,
+       "rsa_refit_lens": 0.8217349293845796,
+       "delta": 0.03412106758730149,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.23064737175713157,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7518788083039979,
+       "rsa_refit_lens": 0.764760014670498,
+       "delta": 0.012881206366500142,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.17367245704305,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "gemma-2-9b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7751854737691316,
+      "0.2": 0.8137207773818015,
+      "0.3": 0.8229026940051193,
+      "0.4": 0.8534005981161266,
+      "0.5": 0.8529773513008247,
+      "0.6": 0.8318768107611156,
+      "0.7": 0.7985673464658987,
+      "0.8": 0.7841162271996979,
+      "0.9": 0.7545224585036757
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.864340692990347,
+       "rsa_refit_lens": 0.8534005981161266,
+       "delta": -0.01094009487422043,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.17445155288148773,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8544509627578756,
+       "rsa_refit_lens": 0.8529773513008247,
+       "delta": -0.0014736114570508274,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.1740283060661859,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7986546040021766,
+       "rsa_refit_lens": 0.8318768107611156,
+       "delta": 0.033222206758939055,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.1529277655264768,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7864559790940328,
+       "rsa_refit_lens": 0.7985673464658987,
+       "delta": 0.012111367371865911,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.11961830123125983,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "llama3.1-8b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.8305753965381931,
+      "0.2": 0.865414577621406,
+      "0.3": 0.869354886367116,
+      "0.4": 0.8922130860249345,
+      "0.5": 0.8727330043223808,
+      "0.6": 0.8600849614578054,
+      "0.7": 0.8753973998075484,
+      "0.8": 0.8725146922880327,
+      "0.9": 0.8579479690121239
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8816817156419853,
+       "rsa_refit_lens": 0.8922130860249345,
+       "delta": 0.010531370382949268,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.2532151614546171,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8412272196609072,
+       "rsa_refit_lens": 0.8727330043223808,
+       "delta": 0.03150578466147358,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.2337350797520633,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8090042184247488,
+       "rsa_refit_lens": 0.8600849614578054,
+       "delta": 0.05108074303305665,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.221087036887488,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.866691402709195,
+       "rsa_refit_lens": 0.8753973998075484,
+       "delta": 0.008705997098353402,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.23639947523723093,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "qwen3.6-27b": {
+     "cross_family": false,
+     "rsa_j_all_fracs": {
+      "0.1": 0.43295684986774985,
+      "0.2": 0.4916622499903051,
+      "0.3": 0.4711954639734615,
+      "0.4": 0.5631289011247044,
+      "0.5": 0.6143252737872362,
+      "0.6": 0.8175059736411826,
+      "0.7": 0.8390546276855083,
+      "0.8": 0.8880635273057942,
+      "0.9": 0.8475183612082355
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.553250689682599,
+       "rsa_refit_lens": 0.5631289011247044,
+       "delta": 0.009878211442105322,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": -0.17359710787026839,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.597295716785034,
+       "rsa_refit_lens": 0.6143252737872362,
+       "delta": 0.01702955700220221,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": -0.12240073520773653,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7989146636348349,
+       "rsa_refit_lens": 0.8175059736411826,
+       "delta": 0.018591310006347728,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": 0.08077996464620985,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.85359860984719,
+       "rsa_refit_lens": 0.8390546276855083,
+       "delta": -0.014543982161681734,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": 0.10232861869053556,
+       "above_baseline": true
+      }
+     },
+     "survives": false
+    }
+   },
+   "verdict_cross_family": true,
+   "verdict_all": false
+  },
+  "qwen3-1.7b|code": {
+   "rows": {
+    "gpt2-small": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7232192725117716,
+      "0.2": 0.7781948187045749,
+      "0.3": 0.7790100933894246,
+      "0.4": 0.8036316840877951,
+      "0.5": 0.7996257419078213,
+      "0.6": 0.8170021769842316,
+      "0.7": 0.7313142214157402,
+      "0.8": 0.8210624424696852,
+      "0.9": 0.8219875566793102
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8728337084015116,
+       "rsa_refit_lens": 0.8036316840877951,
+       "delta": -0.06920202431371658,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.19553436487032583,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.868223964341287,
+       "rsa_refit_lens": 0.7996257419078213,
+       "delta": -0.0685982224334657,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.19152842269035208,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8709272601190577,
+       "rsa_refit_lens": 0.8170021769842316,
+       "delta": -0.053925083134826135,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.20890485776676238,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7930067119937423,
+       "rsa_refit_lens": 0.7313142214157402,
+       "delta": -0.06169249057800208,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6080973192174692,
+       "margin_over_unembed": 0.12321690219827097,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "qwen3-8b": {
+     "cross_family": false,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7956378497705934,
+      "0.2": 0.8122872860927067,
+      "0.3": 0.7803042193518331,
+      "0.4": 0.8053175984152467,
+      "0.5": 0.8192269499002913,
+      "0.6": 0.8767285676085235,
+      "0.7": 0.8762154396509204,
+      "0.8": 0.907150375865245,
+      "0.9": 0.8833493055203077
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.939999263432004,
+       "rsa_refit_lens": 0.8053175984152467,
+       "delta": -0.13468166501675727,
+       "within_tolerance": false,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": -0.03422967173469338,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.9485988224059453,
+       "rsa_refit_lens": 0.8192269499002913,
+       "delta": -0.12937187250565396,
+       "within_tolerance": false,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": -0.020320320249648804,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.9460074926345493,
+       "rsa_refit_lens": 0.8767285676085235,
+       "delta": -0.06927892502602584,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": 0.03718129745858334,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.9299897295616636,
+       "rsa_refit_lens": 0.8762154396509204,
+       "delta": -0.05377428991074318,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8395472701499401,
+       "margin_over_unembed": 0.036668169500980285,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "gemma-2-2b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7128193597613851,
+      "0.2": 0.7715506528076868,
+      "0.3": 0.7375833898140821,
+      "0.4": 0.7768095544997956,
+      "0.5": 0.7410608448154874,
+      "0.6": 0.7904478517806495,
+      "0.7": 0.7337827022326168,
+      "0.8": 0.7232041529006407,
+      "0.9": 0.7216088189213502
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8150949472189899,
+       "rsa_refit_lens": 0.7768095544997956,
+       "delta": -0.03828539271919429,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.18572199687234758,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.782827666196072,
+       "rsa_refit_lens": 0.7410608448154874,
+       "delta": -0.04176682138058463,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.14997328718803937,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7876138617972781,
+       "rsa_refit_lens": 0.7904478517806495,
+       "delta": 0.0028339899833713655,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.19936029415320144,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7518788083039979,
+       "rsa_refit_lens": 0.7337827022326168,
+       "delta": -0.018096106071381124,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.14269514460516874,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "gemma-2-9b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7026808963149269,
+      "0.2": 0.7486407622073104,
+      "0.3": 0.7359384376586285,
+      "0.4": 0.7908139337240429,
+      "0.5": 0.7604271892775746,
+      "0.6": 0.7594231334568823,
+      "0.7": 0.7781829162943878,
+      "0.8": 0.7785437307514801,
+      "0.9": 0.7623055740049186
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.864340692990347,
+       "rsa_refit_lens": 0.7908139337240429,
+       "delta": -0.07352675926630414,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.11186488848940401,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8544509627578756,
+       "rsa_refit_lens": 0.7604271892775746,
+       "delta": -0.094023773480301,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.08147814404293574,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7986546040021766,
+       "rsa_refit_lens": 0.7594231334568823,
+       "delta": -0.0392314705452943,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.08047408822224345,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7864559790940328,
+       "rsa_refit_lens": 0.7781829162943878,
+       "delta": -0.008273062799644904,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6789490452346388,
+       "margin_over_unembed": 0.09923387105974901,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "llama3.1-8b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7611372607421074,
+      "0.2": 0.8119890877344678,
+      "0.3": 0.7984524216438988,
+      "0.4": 0.8400219699604495,
+      "0.5": 0.8187296475743217,
+      "0.6": 0.8374919767692215,
+      "0.7": 0.8558988158214512,
+      "0.8": 0.8649085020649977,
+      "0.9": 0.882189550861294
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8816817156419853,
+       "rsa_refit_lens": 0.8400219699604495,
+       "delta": -0.04165974568153574,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.20102404539013208,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8412272196609072,
+       "rsa_refit_lens": 0.8187296475743217,
+       "delta": -0.022497572086585538,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.1797317230040042,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8090042184247488,
+       "rsa_refit_lens": 0.8374919767692215,
+       "delta": 0.028487758344472702,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.19849405219890404,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.866691402709195,
+       "rsa_refit_lens": 0.8558988158214512,
+       "delta": -0.01079258688774376,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6389979245703175,
+       "margin_over_unembed": 0.21690089125113377,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "qwen3.6-27b": {
+     "cross_family": false,
+     "rsa_j_all_fracs": {
+      "0.1": 0.4397761007400851,
+      "0.2": 0.5068485206135319,
+      "0.3": 0.47490297067027076,
+      "0.4": 0.5509710649795323,
+      "0.5": 0.5786253699491235,
+      "0.6": 0.7829970291219511,
+      "0.7": 0.8106698501005175,
+      "0.8": 0.8862180782725407,
+      "0.9": 0.8691544491970299
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.553250689682599,
+       "rsa_refit_lens": 0.5509710649795323,
+       "delta": -0.0022796247030667516,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": -0.18575494401544046,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.597295716785034,
+       "rsa_refit_lens": 0.5786253699491235,
+       "delta": -0.018670346835910512,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": -0.15810063904584926,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7989146636348349,
+       "rsa_refit_lens": 0.7829970291219511,
+       "delta": -0.01591763451288375,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": 0.04627102012697837,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.85359860984719,
+       "rsa_refit_lens": 0.8106698501005175,
+       "delta": -0.04292875974667254,
+       "within_tolerance": true,
+       "rsa_unembed": 0.7367260089949728,
+       "margin_over_unembed": 0.07394384110554475,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    }
+   },
+   "verdict_cross_family": false,
+   "verdict_all": false
+  },
+  "gemma-2-2b|code": {
+   "rows": {
+    "gpt2-small": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.5373401188361066,
+      "0.2": 0.5798981189335434,
+      "0.3": 0.5866636350272921,
+      "0.4": 0.5947582960596505,
+      "0.5": 0.5918955225094169,
+      "0.6": 0.6095589121470495,
+      "0.7": 0.48376678016965513,
+      "0.8": 0.5867142679251528,
+      "0.9": 0.6431746911595816
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8196496312490268,
+       "rsa_refit_lens": 0.5947582960596505,
+       "delta": -0.22489133518937632,
+       "within_tolerance": false,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.5498784531551575,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8029755083561084,
+       "rsa_refit_lens": 0.5918955225094169,
+       "delta": -0.21107998584669152,
+       "within_tolerance": false,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.5470156796049239,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7527440440753363,
+       "rsa_refit_lens": 0.6095589121470495,
+       "delta": -0.14318513192828686,
+       "within_tolerance": false,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.5646790692425565,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.5933326970678005,
+       "rsa_refit_lens": 0.48376678016965513,
+       "delta": -0.10956591689814532,
+       "within_tolerance": false,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.43888693726516215,
+       "above_baseline": true
+      }
+     },
+     "survives": false
+    },
+    "qwen3-1.7b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.45743930408772665,
+      "0.2": 0.48605677947476145,
+      "0.3": 0.49090944339961096,
+      "0.4": 0.5278565930203849,
+      "0.5": 0.5072340323389999,
+      "0.6": 0.5889283560737886,
+      "0.7": 0.6169922151375914,
+      "0.8": 0.6597637169974117,
+      "0.9": 0.7275984971324975
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8150949472189899,
+       "rsa_refit_lens": 0.5278565930203849,
+       "delta": -0.287238354198605,
+       "within_tolerance": false,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": -0.06323096460706312,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.782827666196072,
+       "rsa_refit_lens": 0.5072340323389999,
+       "delta": -0.27559363385707214,
+       "within_tolerance": false,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": -0.08385352528844814,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7876138617972781,
+       "rsa_refit_lens": 0.5889283560737886,
+       "delta": -0.19868550572348953,
+       "within_tolerance": false,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": -0.002159201553659451,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7518788083039979,
+       "rsa_refit_lens": 0.6169922151375914,
+       "delta": -0.1348865931664065,
+       "within_tolerance": false,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.02590465751014337,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "qwen3-8b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.43996560120024497,
+      "0.2": 0.47323915859313986,
+      "0.3": 0.47302582358169043,
+      "0.4": 0.4857756001776324,
+      "0.5": 0.4797379240321377,
+      "0.6": 0.6110009706090699,
+      "0.7": 0.58252433809325,
+      "0.8": 0.6288375372315687,
+      "0.9": 0.6796586809225492
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.787343733353891,
+       "rsa_refit_lens": 0.4857756001776324,
+       "delta": -0.3015681331762586,
+       "within_tolerance": false,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": -0.1899928535497269,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.7597480689437025,
+       "rsa_refit_lens": 0.4797379240321377,
+       "delta": -0.2800101449115648,
+       "within_tolerance": false,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": -0.19603052969522156,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8004752950774755,
+       "rsa_refit_lens": 0.6110009706090699,
+       "delta": -0.18947432446840562,
+       "within_tolerance": false,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": -0.06476748311828939,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.721575492445586,
+       "rsa_refit_lens": 0.58252433809325,
+       "delta": -0.13905115435233606,
+       "within_tolerance": false,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": -0.09324411563410928,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "gemma-2-9b": {
+     "cross_family": false,
+     "rsa_j_all_fracs": {
+      "0.1": 0.4608503908675996,
+      "0.2": 0.5257677303721151,
+      "0.3": 0.5467146822054242,
+      "0.4": 0.5650795866535071,
+      "0.5": 0.5582225044139306,
+      "0.6": 0.6952711712095024,
+      "0.7": 0.7154003274977428,
+      "0.8": 0.7933161437334085,
+      "0.9": 0.8128542164045225
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8666166445798501,
+       "rsa_refit_lens": 0.5650795866535071,
+       "delta": -0.301537057926343,
+       "within_tolerance": false,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.32048398760256014,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.854520691130518,
+       "rsa_refit_lens": 0.5582225044139306,
+       "delta": -0.29629818671658736,
+       "within_tolerance": false,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.3273410698421366,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8820370257007794,
+       "rsa_refit_lens": 0.6952711712095024,
+       "delta": -0.18676585449127692,
+       "within_tolerance": false,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.1902924030465648,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.8561794392049523,
+       "rsa_refit_lens": 0.7154003274977428,
+       "delta": -0.14077911170720947,
+       "within_tolerance": false,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.1701632467583244,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "llama3.1-8b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.4119578275305233,
+      "0.2": 0.4724158977274185,
+      "0.3": 0.5174714846235814,
+      "0.4": 0.5601643499299771,
+      "0.5": 0.5846414528109666,
+      "0.6": 0.7255770537684688,
+      "0.7": 0.6951305683058502,
+      "0.8": 0.7328558877468052,
+      "0.9": 0.7791400288156448
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8341606595794288,
+       "rsa_refit_lens": 0.5601643499299771,
+       "delta": -0.27399630964945165,
+       "within_tolerance": false,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.2733356919870083,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8379047031023342,
+       "rsa_refit_lens": 0.5846414528109666,
+       "delta": -0.25326325029136765,
+       "within_tolerance": false,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.2978127948679978,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8776375845432813,
+       "rsa_refit_lens": 0.7255770537684688,
+       "delta": -0.15206053077481252,
+       "within_tolerance": false,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.4387483958255,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.8202325895981418,
+       "rsa_refit_lens": 0.6951305683058502,
+       "delta": -0.12510202129229164,
+       "within_tolerance": false,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.4083019103628814,
+       "above_baseline": true
+      }
+     },
+     "survives": false
+    },
+    "qwen3.6-27b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.3180349882258472,
+      "0.2": 0.36682389898840895,
+      "0.3": 0.3490170136171945,
+      "0.4": 0.42367564049190143,
+      "0.5": 0.4226358684412847,
+      "0.6": 0.6134376045326225,
+      "0.7": 0.6141396136309812,
+      "0.8": 0.715851515033416,
+      "0.9": 0.7652348458125976
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.5124430837371694,
+       "rsa_refit_lens": 0.42367564049190143,
+       "delta": -0.08876744324526797,
+       "within_tolerance": true,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": -0.046138149651217264,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.5211347455222377,
+       "rsa_refit_lens": 0.4226358684412847,
+       "delta": -0.098498877080953,
+       "within_tolerance": true,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": -0.04717792170183399,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7347516490579193,
+       "rsa_refit_lens": 0.6134376045326225,
+       "delta": -0.12131404452529682,
+       "within_tolerance": false,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": 0.14362381438950383,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.735496517654396,
+       "rsa_refit_lens": 0.6141396136309812,
+       "delta": -0.12135690402341481,
+       "within_tolerance": false,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": 0.14432582348786255,
+       "above_baseline": true
+      }
+     },
+     "survives": false
+    }
+   },
+   "verdict_cross_family": false,
+   "verdict_all": false
+  },
+  "gemma-2-2b|wiki100": {
+   "rows": {
+    "gpt2-small": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7538305726163098,
+      "0.2": 0.7822921547941547,
+      "0.3": 0.804238764040012,
+      "0.4": 0.8137470057981506,
+      "0.5": 0.8017745083535657,
+      "0.6": 0.7477539464752307,
+      "0.7": 0.5852242004177566,
+      "0.8": 0.6242364232022153,
+      "0.9": 0.6059267518515711
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8196496312490268,
+       "rsa_refit_lens": 0.8137470057981506,
+       "delta": -0.005902625450876164,
+       "within_tolerance": true,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.7688671628936576,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8029755083561084,
+       "rsa_refit_lens": 0.8017745083535657,
+       "delta": -0.0012010000025427514,
+       "within_tolerance": true,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.7568946654490727,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7527440440753363,
+       "rsa_refit_lens": 0.7477539464752307,
+       "delta": -0.004990097600105603,
+       "within_tolerance": true,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.7028741035707378,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.5933326970678005,
+       "rsa_refit_lens": 0.5852242004177566,
+       "delta": -0.008108496650043873,
+       "within_tolerance": true,
+       "rsa_unembed": 0.04487984290449298,
+       "margin_over_unembed": 0.5403443575132636,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "qwen3-1.7b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7688699814317376,
+      "0.2": 0.8022095334986186,
+      "0.3": 0.7746263578630698,
+      "0.4": 0.8071910193375541,
+      "0.5": 0.780113959866356,
+      "0.6": 0.7815628790983524,
+      "0.7": 0.745758258000748,
+      "0.8": 0.7109647753066684,
+      "0.9": 0.7130503358234724
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8150949472189899,
+       "rsa_refit_lens": 0.8071910193375541,
+       "delta": -0.00790392788143579,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.21610346171010608,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.782827666196072,
+       "rsa_refit_lens": 0.780113959866356,
+       "delta": -0.0027137063297160147,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.189026402238908,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7876138617972781,
+       "rsa_refit_lens": 0.7815628790983524,
+       "delta": -0.006050982698925678,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.1904753214709044,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.7518788083039979,
+       "rsa_refit_lens": 0.745758258000748,
+       "delta": -0.006120550303249872,
+       "within_tolerance": true,
+       "rsa_unembed": 0.591087557627448,
+       "margin_over_unembed": 0.1546707003733,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "qwen3-8b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7493789115372658,
+      "0.2": 0.7917170911499831,
+      "0.3": 0.7674520985635366,
+      "0.4": 0.7858997495050973,
+      "0.5": 0.75817806240766,
+      "0.6": 0.7947809611171133,
+      "0.7": 0.7143841801217213,
+      "0.8": 0.6768107078650377,
+      "0.9": 0.6566633797756539
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.787343733353891,
+       "rsa_refit_lens": 0.7858997495050973,
+       "delta": -0.0014439838487936285,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": 0.11013129577773806,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.7597480689437025,
+       "rsa_refit_lens": 0.75817806240766,
+       "delta": -0.0015700065360425564,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": 0.08240960868030067,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8004752950774755,
+       "rsa_refit_lens": 0.7947809611171133,
+       "delta": -0.00569433396036223,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": 0.119012507389754,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.721575492445586,
+       "rsa_refit_lens": 0.7143841801217213,
+       "delta": -0.007191312323864718,
+       "within_tolerance": true,
+       "rsa_unembed": 0.6757684537273593,
+       "margin_over_unembed": 0.03861572639436206,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "gemma-2-9b": {
+     "cross_family": false,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7568581723731498,
+      "0.2": 0.8036009702348583,
+      "0.3": 0.8280972987183045,
+      "0.4": 0.8468407607059065,
+      "0.5": 0.8394732093235756,
+      "0.6": 0.872577545885786,
+      "0.7": 0.8525568051141019,
+      "0.8": 0.8407788486758185,
+      "0.9": 0.837602822698258
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8666166445798501,
+       "rsa_refit_lens": 0.8468407607059065,
+       "delta": -0.01977588387394358,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.03872281355016072,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.854520691130518,
+       "rsa_refit_lens": 0.8394732093235756,
+       "delta": -0.015047481806942375,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.046090364932491634,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8820370257007794,
+       "rsa_refit_lens": 0.872577545885786,
+       "delta": -0.009459479814993399,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.012986028370281288,
+       "above_baseline": false
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.8561794392049523,
+       "rsa_refit_lens": 0.8525568051141019,
+       "delta": -0.0036226340908503962,
+       "within_tolerance": true,
+       "rsa_unembed": 0.8855635742560672,
+       "margin_over_unembed": -0.03300676914196532,
+       "above_baseline": false
+      }
+     },
+     "survives": false
+    },
+    "llama3.1-8b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.7350410385268953,
+      "0.2": 0.7918977992373619,
+      "0.3": 0.7937182135427147,
+      "0.4": 0.8165954518286125,
+      "0.5": 0.8259492305619457,
+      "0.6": 0.8718008635706346,
+      "0.7": 0.8144872327437154,
+      "0.8": 0.7859615305031792,
+      "0.9": 0.7689690606170634
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.8341606595794288,
+       "rsa_refit_lens": 0.8165954518286125,
+       "delta": -0.01756520775081627,
+       "within_tolerance": true,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.5297667938856436,
+       "above_baseline": true
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.8379047031023342,
+       "rsa_refit_lens": 0.8259492305619457,
+       "delta": -0.011955472540388534,
+       "within_tolerance": true,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.539120572618977,
+       "above_baseline": true
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.8776375845432813,
+       "rsa_refit_lens": 0.8718008635706346,
+       "delta": -0.005836720972646758,
+       "within_tolerance": true,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.5849722056276658,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.8202325895981418,
+       "rsa_refit_lens": 0.8144872327437154,
+       "delta": -0.005745356854426453,
+       "within_tolerance": true,
+       "rsa_unembed": 0.2868286579429688,
+       "margin_over_unembed": 0.5276585748007465,
+       "above_baseline": true
+      }
+     },
+     "survives": true
+    },
+    "qwen3.6-27b": {
+     "cross_family": true,
+     "rsa_j_all_fracs": {
+      "0.1": 0.36702879193710036,
+      "0.2": 0.44464491160928726,
+      "0.3": 0.429155004836677,
+      "0.4": 0.5123076645925702,
+      "0.5": 0.5230865617962448,
+      "0.6": 0.7309291532788783,
+      "0.7": 0.7276786434088525,
+      "0.8": 0.7622769053393171,
+      "0.9": 0.7557168473996673
+     },
+     "fractions": {
+      "0.4": {
+       "rsa_wiki_lens": 0.5124430837371694,
+       "rsa_refit_lens": 0.5123076645925702,
+       "delta": -0.00013541914459924698,
+       "within_tolerance": true,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": 0.04249387444945146,
+       "above_baseline": false
+      },
+      "0.5": {
+       "rsa_wiki_lens": 0.5211347455222377,
+       "rsa_refit_lens": 0.5230865617962448,
+       "delta": 0.00195181627400709,
+       "within_tolerance": true,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": 0.053272771653126105,
+       "above_baseline": false
+      },
+      "0.6": {
+       "rsa_wiki_lens": 0.7347516490579193,
+       "rsa_refit_lens": 0.7309291532788783,
+       "delta": -0.003822495779041035,
+       "within_tolerance": true,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": 0.2611153631357596,
+       "above_baseline": true
+      },
+      "0.7": {
+       "rsa_wiki_lens": 0.735496517654396,
+       "rsa_refit_lens": 0.7276786434088525,
+       "delta": -0.007817874245543588,
+       "within_tolerance": true,
+       "rsa_unembed": 0.4698137901431187,
+       "margin_over_unembed": 0.2578648532657338,
+       "above_baseline": true
+      }
+     },
+     "survives": false
+    }
+   },
+   "verdict_cross_family": false,
+   "verdict_all": false
+  }
+ },
+ "same_model_cross_corpus": {
+  "qwen3-1.7b": {
+   "wikitext|chat": {
+    "0.1": 0.9302587442930125,
+    "0.2": 0.935334746287622,
+    "0.3": 0.9428336631543348,
+    "0.4": 0.9567712125188108,
+    "0.5": 0.9613129002052201,
+    "0.6": 0.9627991779281472,
+    "0.7": 0.9807684645123512,
+    "0.8": 0.9888412358839268,
+    "0.9": 0.9948489499402675
+   },
+   "wikitext|code": {
+    "0.1": 0.8552360791993014,
+    "0.2": 0.852842302320295,
+    "0.3": 0.83276400502664,
+    "0.4": 0.8742327592033526,
+    "0.5": 0.8732217366219652,
+    "0.6": 0.902208059081123,
+    "0.7": 0.9474777021216767,
+    "0.8": 0.9702280511164343,
+    "0.9": 0.9777474967587533
+   },
+   "chat|code": {
+    "0.1": 0.8667700811411496,
+    "0.2": 0.8696262478345876,
+    "0.3": 0.8566287565429312,
+    "0.4": 0.8995986147012021,
+    "0.5": 0.9004366432751781,
+    "0.6": 0.9331698199903157,
+    "0.7": 0.9571493688667474,
+    "0.8": 0.9741277220415849,
+    "0.9": 0.9771594986779812
+   }
+  },
+  "gemma-2-2b": {
+   "wikitext|code": {
+    "0.1": 0.6730443827018426,
+    "0.2": 0.6768188826069602,
+    "0.3": 0.7578103093977168,
+    "0.4": 0.7532499849816813,
+    "0.5": 0.7770520519500095,
+    "0.6": 0.8538939383193559,
+    "0.7": 0.8871003188103352,
+    "0.8": 0.9449575501156251,
+    "0.9": 0.9516124026362758
+   },
+   "wikitext|wiki100": {
+    "0.1": 0.9733308264808146,
+    "0.2": 0.9730080393794044,
+    "0.3": 0.9870607824102062,
+    "0.4": 0.9871087386871451,
+    "0.5": 0.9905550979741372,
+    "0.6": 0.9947030420128425,
+    "0.7": 0.995622178866214,
+    "0.8": 0.9973080388815243,
+    "0.9": 0.9983910577431572
+   },
+   "wiki100|code": {
+    "0.1": 0.683375021399451,
+    "0.2": 0.6978649132969722,
+    "0.3": 0.7581938856128854,
+    "0.4": 0.7569498188506186,
+    "0.5": 0.7799238409803937,
+    "0.6": 0.8562272189657679,
+    "0.7": 0.8902501957064323,
+    "0.8": 0.9462744178430874,
+    "0.9": 0.9517413210533542
+   }
+  }
+ }
+}

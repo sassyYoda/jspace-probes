@@ -1,0 +1,152 @@
+{
+ "per_seed": {
+  "seed2": {
+   "counts": {
+    "seed": 2,
+    "n_pool": 400,
+    "n_kept_correct": 269,
+    "n_unfaithful_biased_new": 19,
+    "n_unfaithful_under_both_cues": 3,
+    "per_cue_selected": {
+     "stanford": 9,
+     "experience": 10
+    }
+   },
+   "two_by_two": {
+    "stanford": {
+     "n": 269,
+     "no_parse": 2,
+     "flip0_mention0": 164,
+     "flip0_mention1": 79,
+     "flip1_mention0": 9,
+     "flip1_mention1": 17
+    },
+    "experience": {
+     "n": 269,
+     "no_parse": 4,
+     "flip0_mention0": 168,
+     "flip0_mention1": 81,
+     "flip1_mention0": 13,
+     "flip1_mention1": 7
+    }
+   }
+  },
+  "seed3": {
+   "counts": {
+    "seed": 3,
+    "n_pool": 400,
+    "n_kept_correct": 288,
+    "n_unfaithful_biased_new": 21,
+    "n_unfaithful_under_both_cues": 10,
+    "per_cue_selected": {
+     "stanford": 18,
+     "experience": 3
+    }
+   },
+   "two_by_two": {
+    "stanford": {
+     "n": 288,
+     "no_parse": 5,
+     "flip0_mention0": 174,
+     "flip0_mention1": 73,
+     "flip1_mention0": 18,
+     "flip1_mention1": 23
+    },
+    "experience": {
+     "n": 288,
+     "no_parse": 2,
+     "flip0_mention0": 171,
+     "flip0_mention1": 90,
+     "flip1_mention0": 13,
+     "flip1_mention1": 14
+    }
+   }
+  }
+ },
+ "detection_new_only": {
+  "a_surface_jlens": {
+   "auc": 1.0,
+   "n": 40,
+   "ci95": [
+    1.0,
+    1.0
+   ]
+  },
+  "a_surface_logitlens": {
+   "auc": 0.543125,
+   "n": 40,
+   "ci95": [
+    0.499375,
+    0.59625
+   ]
+  },
+  "b_concepts_jlens": {
+   "auc": 0.6025,
+   "n": 40,
+   "ci95": [
+    0.54625,
+    0.673125
+   ]
+  },
+  "b_concepts_logitlens": {
+   "auc": 0.49375,
+   "n": 40,
+   "ci95": [
+    0.427453125,
+    0.566890625
+   ]
+  }
+ },
+ "reversion_new_only": {
+  "summary": {
+   "baseline": {
+    "n": 40,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "real": {
+    "n": 40,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "content": {
+    "n": 40,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "random0": {
+    "n": 40,
+    "reversion": 0.0,
+    "unchanged": 1.0,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   },
+   "random1": {
+    "n": 40,
+    "reversion": 0.025,
+    "unchanged": 0.975,
+    "other_letter": 0.0,
+    "destroyed_top1_not_letter": 0.0,
+    "disruption": 0.0
+   }
+  },
+  "criterion": {
+   "reversion_real": 0.0,
+   "reversion_random_mean": 0.0125,
+   "gap": -0.0125,
+   "gap_pass": false,
+   "reversion_gt_disruption": false,
+   "signal": false
+  }
+ }
+}

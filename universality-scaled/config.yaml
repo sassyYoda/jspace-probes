@@ -1,0 +1,145 @@
+# A+G extension (GPU phase): 7-model universality grid + corpus-grid growth.
+# Part 1 (extend_a.py): 7x7 pairwise RSA, norm-scaled convention, unembed +
+#   shuffled-x3 baselines, shard-wise unembedding fetch (no full model downloads).
+# Part 2 (fit_corpus.py + compare_corpus.py): two new lens fits (GPU)
+#   (qwen3-1.7b on chat text, gemma-2-2b on code), corpus-grid RSA rows.
+
+lens_repo: neuronpedia/jacobian-lens
+lens_revision_main: a4114d7752d11eb546e6cf372213d7e75526d3a1   # == A's pin
+lens_revision_qwen_n1000: 16a01f309fcec900fdcec3f4cd5b64f3d00e4d5a
+
+models:
+  gpt2-small:
+    hf_repo: gpt2
+    hf_revision: 607a30d783dfa663caf39e06633721c8d4cfcd7e
+    lens_file: gpt2-small/jlens/Salesforce-wikitext/gpt2_jacobian_lens.pt
+    lens_revision: a4114d7752d11eb546e6cf372213d7e75526d3a1
+    n_layers: 12
+    norm_plus_one: false
+    family: gpt2
+    params_b: 0.124
+  qwen3-1.7b:
+    hf_repo: Qwen/Qwen3-1.7B
+    hf_revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+    lens_file: qwen3-1.7b/jlens/Salesforce-wikitext/Qwen3-1.7B_jacobian_lens.pt
+    lens_revision: a4114d7752d11eb546e6cf372213d7e75526d3a1
+    n_layers: 28
+    norm_plus_one: false
+    family: qwen
+    params_b: 1.7
+  qwen3-8b:
+    hf_repo: Qwen/Qwen3-8B
+    hf_revision: b968826d9c46dd6066d109eabc6255188de91218
+    lens_file: qwen3-8b/jlens/Salesforce-wikitext/Qwen3-8B_jacobian_lens.pt
+    lens_revision: a4114d7752d11eb546e6cf372213d7e75526d3a1
+    n_layers: 36
+    norm_plus_one: false
+    family: qwen
+    params_b: 8.2
+  gemma-2-2b:
+    hf_repo: google/gemma-2-2b
+    hf_revision: c5ebcd40d208330abc697524c919956e692655cf
+    lens_file: gemma-2-2b/jlens/Salesforce-wikitext/gemma-2-2b_jacobian_lens.pt
+    lens_revision: a4114d7752d11eb546e6cf372213d7e75526d3a1
+    n_layers: 26
+    norm_plus_one: true
+    family: gemma
+    params_b: 2.6
+  gemma-2-9b:
+    hf_repo: google/gemma-2-9b
+    hf_revision: 33c193028431c2fde6c6e51f29e6f17b60cbfac6
+    lens_file: gemma-2-9b/jlens/Salesforce-wikitext/gemma-2-9b_jacobian_lens.pt
+    lens_revision: a4114d7752d11eb546e6cf372213d7e75526d3a1
+    n_layers: 42
+    norm_plus_one: true
+    family: gemma
+    params_b: 9.2
+  llama3.1-8b:
+    hf_repo: meta-llama/Llama-3.1-8B
+    hf_revision: d04e592bb4f6aa9cfee91e2e20afa771667e1d4b
+    lens_file: llama3.1-8b/jlens/Salesforce-wikitext/Llama-3.1-8B_jacobian_lens.pt
+    lens_revision: a4114d7752d11eb546e6cf372213d7e75526d3a1
+    n_layers: 32
+    norm_plus_one: false
+    family: llama
+    params_b: 8.0
+  qwen3.6-27b:
+    # Qwen3_5ForConditionalGeneration wrapper: text tower is under
+    # model.language_model.*, unembedding is untied lm_head.weight.
+    hf_repo: Qwen/Qwen3.6-27B
+    hf_revision: 6a9e13bd6fc8f0983b9b99948120bc37f49c13e9
+    lens_file: qwen3.6-27b/jlens/Salesforce-wikitext/Qwen3.6-27B_jacobian_lens_n1000.pt
+    lens_revision: 16a01f309fcec900fdcec3f4cd5b64f3d00e4d5a   # qwen-n1000 branch
+    n_layers: 64            # text_config.num_hidden_layers
+    norm_plus_one: false
+    family: qwen            # qwen3.6 generation; treated as the qwen size-ladder top
+    params_b: 27.0
+
+fractions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+mid_fractions: [0.4, 0.5, 0.6, 0.7]
+min_concepts: 120
+pairwise_max_threshold: 200   # if the 7-way shared set < this, also report
+                              # pairwise-maximal concept sets per pair
+seed: 0
+baseline_seeds: [0, 1, 2]
+
+# ---------------- Part 2: corpus-grid fits (GPU) ----------------
+fits:
+  qwen3-1.7b-chat:
+    model: qwen3-1.7b
+    corpus:
+      # lmsys/lmsys-chat-1m is gated (403, checked 2026-07-21);
+      # fallback per plan: ultrachat_200k, user-turn text only.
+      hf_dataset: HuggingFaceH4/ultrachat_200k
+      split: train_sft
+      streaming: true
+      text_field: messages       # user turns concatenated per conversation
+      user_turns_only: true
+      max_seq_len: 128
+      n_prompts_target: 100
+    # exactly the layers A's frac_to_layer maps 0.1..0.9 onto for qwen3-1.7b
+    source_layers: [3, 6, 8, 11, 14, 17, 20, 22, 25]
+    lens_out: results/qwen3-1.7b_ultrachat_lens.pt
+  gemma-2-2b-code:
+    model: gemma-2-2b
+    corpus:
+      # SAME code corpus as ../corpus-refit's qwen refit
+      hf_dataset: codeparrot/codeparrot-clean-valid
+      split: train
+      streaming: true
+      text_field: content
+      user_turns_only: false
+      max_seq_len: 128
+      n_prompts_target: 100
+    # exactly the layers A's frac_to_layer maps 0.1..0.9 onto for gemma-2-2b
+    source_layers: [3, 5, 8, 10, 13, 16, 18, 21, 23]
+    lens_out: results/gemma-2-2b_codeparrot_lens.pt
+
+  gemma-2-2b-wiki:
+    # CONTROL: same n=100 recipe on the lenses' own fitting corpus. Separates
+    # corpus sensitivity from n=100-vs-n462 fit noise for the gemma verdict.
+    model: gemma-2-2b
+    corpus:
+      hf_dataset: Salesforce/wikitext
+      hf_config: wikitext-103-raw-v1
+      split: train
+      streaming: true
+      text_field: text
+      user_turns_only: false
+      max_seq_len: 128
+      n_prompts_target: 100
+    source_layers: [3, 5, 8, 10, 13, 16, 18, 21, 23]
+    lens_out: results/gemma-2-2b_wikitext100_lens.pt
+
+fit:
+  dtype: bfloat16
+  device: cuda
+  dim_batch: 64         # sized for a large-VRAM GPU; reduce on smaller cards
+  checkpoint_every: 2
+
+comparison:
+  rsa_tolerance: 0.1    # pre-registered (../corpus-refit): |RSA_refit - RSA_wiki| <= 0.1
+                        # at mid fractions AND margin over unembed > 0.1 (and >
+                        # shuffled spread) => corpus-robustness verdict PASS
+  # code-corpus qwen lens from ../corpus-refit (copy or regenerate it there):
+  qwen_code_lens: results/qwen3-1.7b_codeparrot_lens.pt

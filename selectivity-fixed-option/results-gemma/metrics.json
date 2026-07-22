@@ -1,0 +1,168 @@
+{
+ "accuracy": {
+  "multihop/fixed": {
+   "n": 60,
+   "baseline": 0.9,
+   "real_k20": 0.85,
+   "bottomk_k20": 0.8833,
+   "rand_s0_k20": 0.8667,
+   "rand_s1_k20": 0.8833,
+   "drop_real_vs_random": 0.025,
+   "answer_in_topk_frac": 0.2
+  },
+  "multihop/fixed@noleak": {
+   "n": 48,
+   "baseline": 0.875,
+   "real_k20": 0.8333,
+   "bottomk_k20": 0.875,
+   "rand_s0_k20": 0.875,
+   "rand_s1_k20": 0.875,
+   "drop_real_vs_random": 0.0417,
+   "answer_in_topk_frac": 0.0
+  },
+  "multihop/gen": {
+   "n": 60,
+   "baseline": 0.6333,
+   "real_k20": 0.1333,
+   "bottomk_k20": 0.4167,
+   "rand_s0_k20": 0.5833,
+   "rand_s1_k20": 0.5833,
+   "drop_real_vs_random": 0.45,
+   "answer_in_topk_frac": 0.0667
+  },
+  "rhyme/fixed": {
+   "n": 60,
+   "baseline": 1.0,
+   "real_k20": 1.0,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 1.0,
+   "rand_s1_k20": 1.0,
+   "drop_real_vs_random": 0.0,
+   "answer_in_topk_frac": 0.55
+  },
+  "rhyme/fixed@noleak": {
+   "n": 27,
+   "baseline": 1.0,
+   "real_k20": 1.0,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 1.0,
+   "rand_s1_k20": 1.0,
+   "drop_real_vs_random": 0.0,
+   "answer_in_topk_frac": 0.0
+  },
+  "rhyme/gen": {
+   "n": 60,
+   "baseline": 1.0,
+   "real_k20": 0.9167,
+   "bottomk_k20": 0.95,
+   "rand_s0_k20": 1.0,
+   "rand_s1_k20": 1.0,
+   "drop_real_vs_random": 0.0833,
+   "answer_in_topk_frac": 0.45
+  },
+  "singlehop/fixed": {
+   "n": 60,
+   "baseline": 1.0,
+   "real_k20": 1.0,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 1.0,
+   "rand_s1_k20": 1.0,
+   "drop_real_vs_random": 0.0,
+   "answer_in_topk_frac": 0.15
+  },
+  "singlehop/fixed@noleak": {
+   "n": 51,
+   "baseline": 1.0,
+   "real_k20": 1.0,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 1.0,
+   "rand_s1_k20": 1.0,
+   "drop_real_vs_random": 0.0,
+   "answer_in_topk_frac": 0.0
+  },
+  "singlehop/gen": {
+   "n": 60,
+   "baseline": 0.9,
+   "real_k20": 0.35,
+   "bottomk_k20": 0.8667,
+   "rand_s0_k20": 0.8833,
+   "rand_s1_k20": 0.9167,
+   "drop_real_vs_random": 0.55,
+   "answer_in_topk_frac": 0.4333
+  }
+ },
+ "verdict": {
+  "grid_drop_real_vs_random": {
+   "singlehop": {
+    "gen": 0.55,
+    "fixed": 0.0
+   },
+   "multihop": {
+    "gen": 0.45,
+    "fixed": 0.0417
+   },
+   "rhyme": {
+    "gen": 0.0833,
+    "fixed": 0.0
+   }
+  },
+  "answer_leak_fraction_fixed": {
+   "multihop": 0.2,
+   "rhyme": 0.55,
+   "singlehop": 0.15
+  },
+  "ours_answer_in_workspace": false,
+  "papers_task_type": false,
+  "decisive_cell_multihop_fixed": 0.0417,
+  "thresholds": {
+   "gen_min_drop": 0.2,
+   "fixed_max_drop": 0.05,
+   "paper_dep_min_drop": 0.15
+  }
+ },
+ "manifest": {
+  "model": "google/gemma-2-9b",
+  "lens": "gemma-2-9b/jlens/Salesforce-wikitext/gemma-2-9b_jacobian_lens.pt",
+  "device": "cuda",
+  "band_layers": [
+   16,
+   30
+  ],
+  "n_band_layers": 15,
+  "k": 20,
+  "random_seeds": [
+   0,
+   1
+  ],
+  "active_pool": 500,
+  "scan_top": 4000,
+  "n_items": {
+   "multihop/gen": 60,
+   "multihop/fixed": 60,
+   "singlehop/gen": 60,
+   "singlehop/fixed": 60,
+   "rhyme/gen": 60,
+   "rhyme/fixed": 60
+  },
+  "item_seed": 0,
+  "exclusion_rule": "Token excluded from active-concept ranking if: (1) decoded string, stripped+lowercased, is empty or has no alphabetic character (punctuation/digits/whitespace); (2) single ASCII letter; (3) in fixed English function-word list (~110 words, see STOP in run.py); (4) token id occurs in prompt token ids; (5) normalized string matches lowercased prompt at word boundaries; (6) tokenizer special token (chat markup). Candidates deduplicated by normalized string, highest score kept. Score = max over mid-band layers x all positions of J-lens softmax probability.",
+  "bottomk_rule": "ranks 500-k+1..500 of the filtered active pool",
+  "random_control": "k iid gaussian directions per layer, QR-orthonormalized by the ablate op; subspace dimension exactly matches real",
+  "fixed_scoring": "argmax over letter-token logits ' A'..' D' at last position",
+  "leak_rule": "top-k concept string equals an answer content word, or plural-stripped equal, or (len>=4) prefix relation",
+  "bos_prepended": true,
+  "pos_start": 1,
+  "softcap": 30.0,
+  "fixed_label_histogram": {
+   "D": 51,
+   "B": 38,
+   "A": 47,
+   "C": 44
+  },
+  "python": "3.12.3",
+  "torch": "2.11.0+gitd0c8b1f",
+  "transformers": "5.12.1",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "wall_clock_seconds": 953.5
+ }
+}

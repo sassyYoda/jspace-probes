@@ -1,0 +1,18 @@
+model: google/gemma-2-9b
+lens_repo: neuronpedia/jacobian-lens
+lens_file: gemma-2-9b/jlens/Salesforce-wikitext/gemma-2-9b_jacobian_lens.pt
+device: auto
+band: [0.40, 0.75]
+k: 20
+random_seeds: [0, 1]
+scan_top: 4000
+active_pool: 500
+n_items: 60
+item_seed: 0            # identical battery to the Qwen arm
+criterion:
+  gen_min_drop: 0.20
+  fixed_max_drop: 0.05
+  paper_dep_min_drop: 0.15
+# Gemma handling (auto-detected in run.py): BOS attention sink excluded from
+# readout scans and ablation positions (pos_start=1); final logit softcap
+# applied in readout; j-vectors from raw unembedding rows (write convention).

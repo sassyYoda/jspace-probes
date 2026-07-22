@@ -1,0 +1,15 @@
+model: Qwen/Qwen3-8B
+lens_repo: neuronpedia/jacobian-lens
+lens_file: qwen3-8b/jlens/Salesforce-wikitext/Qwen3-8B_jacobian_lens.pt
+device: auto
+band: [0.40, 0.75]      # mid band, fractions of lens layers (signal-check convention)
+k: 20                   # ablated concept directions (signal-check criterion k)
+random_seeds: [0, 1]
+scan_top: 4000          # raw vocab entries scanned before exclusion filtering
+active_pool: 500        # filtered candidates kept; real = ranks 1..k, bottom = last k
+n_items: 60             # underlying questions per task type (x2 formats)
+item_seed: 0
+criterion:              # pre-registered (see README.md)
+  gen_min_drop: 0.20    # OURS: GEN real sits >= 20 pts below random, all 3 tasks
+  fixed_max_drop: 0.05  # OURS: FIXED within 5 pts of random, all 3 tasks
+  paper_dep_min_drop: 0.15  # PAPER'S: multihop drops >= 15 pts in BOTH formats

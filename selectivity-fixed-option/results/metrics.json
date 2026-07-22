@@ -1,0 +1,168 @@
+{
+ "accuracy": {
+  "multihop/fixed": {
+   "n": 60,
+   "baseline": 0.8833,
+   "real_k20": 0.85,
+   "bottomk_k20": 0.85,
+   "rand_s0_k20": 0.8833,
+   "rand_s1_k20": 0.8833,
+   "drop_real_vs_random": 0.0333,
+   "answer_in_topk_frac": 0.0667
+  },
+  "multihop/fixed@noleak": {
+   "n": 56,
+   "baseline": 0.875,
+   "real_k20": 0.8393,
+   "bottomk_k20": 0.8393,
+   "rand_s0_k20": 0.875,
+   "rand_s1_k20": 0.875,
+   "drop_real_vs_random": 0.0357,
+   "answer_in_topk_frac": 0.0
+  },
+  "multihop/gen": {
+   "n": 60,
+   "baseline": 0.6833,
+   "real_k20": 0.2333,
+   "bottomk_k20": 0.6167,
+   "rand_s0_k20": 0.5667,
+   "rand_s1_k20": 0.5333,
+   "drop_real_vs_random": 0.3167,
+   "answer_in_topk_frac": 0.2333
+  },
+  "rhyme/fixed": {
+   "n": 60,
+   "baseline": 0.9833,
+   "real_k20": 0.9667,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 0.9833,
+   "rand_s1_k20": 0.9833,
+   "drop_real_vs_random": 0.0167,
+   "answer_in_topk_frac": 0.1
+  },
+  "rhyme/fixed@noleak": {
+   "n": 54,
+   "baseline": 0.9815,
+   "real_k20": 0.963,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 0.9815,
+   "rand_s1_k20": 0.9815,
+   "drop_real_vs_random": 0.0185,
+   "answer_in_topk_frac": 0.0
+  },
+  "rhyme/gen": {
+   "n": 60,
+   "baseline": 0.95,
+   "real_k20": 0.8667,
+   "bottomk_k20": 0.9,
+   "rand_s0_k20": 0.9,
+   "rand_s1_k20": 0.9,
+   "drop_real_vs_random": 0.0333,
+   "answer_in_topk_frac": 0.2667
+  },
+  "singlehop/fixed": {
+   "n": 60,
+   "baseline": 1.0,
+   "real_k20": 1.0,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 1.0,
+   "rand_s1_k20": 1.0,
+   "drop_real_vs_random": 0.0,
+   "answer_in_topk_frac": 0.0333
+  },
+  "singlehop/fixed@noleak": {
+   "n": 58,
+   "baseline": 1.0,
+   "real_k20": 1.0,
+   "bottomk_k20": 1.0,
+   "rand_s0_k20": 1.0,
+   "rand_s1_k20": 1.0,
+   "drop_real_vs_random": 0.0,
+   "answer_in_topk_frac": 0.0
+  },
+  "singlehop/gen": {
+   "n": 60,
+   "baseline": 0.9667,
+   "real_k20": 0.6333,
+   "bottomk_k20": 0.9,
+   "rand_s0_k20": 0.8667,
+   "rand_s1_k20": 0.8167,
+   "drop_real_vs_random": 0.2083,
+   "answer_in_topk_frac": 0.5833
+  }
+ },
+ "verdict": {
+  "grid_drop_real_vs_random": {
+   "singlehop": {
+    "gen": 0.2083,
+    "fixed": 0.0
+   },
+   "multihop": {
+    "gen": 0.3167,
+    "fixed": 0.0357
+   },
+   "rhyme": {
+    "gen": 0.0333,
+    "fixed": 0.0185
+   }
+  },
+  "answer_leak_fraction_fixed": {
+   "multihop": 0.0667,
+   "rhyme": 0.1,
+   "singlehop": 0.0333
+  },
+  "ours_answer_in_workspace": false,
+  "papers_task_type": false,
+  "decisive_cell_multihop_fixed": 0.0357,
+  "thresholds": {
+   "gen_min_drop": 0.2,
+   "fixed_max_drop": 0.05,
+   "paper_dep_min_drop": 0.15
+  }
+ },
+ "manifest": {
+  "model": "Qwen/Qwen3-8B",
+  "lens": "qwen3-8b/jlens/Salesforce-wikitext/Qwen3-8B_jacobian_lens.pt",
+  "device": "cuda",
+  "band_layers": [
+   14,
+   25
+  ],
+  "n_band_layers": 12,
+  "k": 20,
+  "random_seeds": [
+   0,
+   1
+  ],
+  "active_pool": 500,
+  "scan_top": 4000,
+  "n_items": {
+   "multihop/gen": 60,
+   "multihop/fixed": 60,
+   "singlehop/gen": 60,
+   "singlehop/fixed": 60,
+   "rhyme/gen": 60,
+   "rhyme/fixed": 60
+  },
+  "item_seed": 0,
+  "exclusion_rule": "Token excluded from active-concept ranking if: (1) decoded string, stripped+lowercased, is empty or has no alphabetic character (punctuation/digits/whitespace); (2) single ASCII letter; (3) in fixed English function-word list (~110 words, see STOP in run.py); (4) token id occurs in prompt token ids; (5) normalized string matches lowercased prompt at word boundaries; (6) tokenizer special token (chat markup). Candidates deduplicated by normalized string, highest score kept. Score = max over mid-band layers x all positions of J-lens softmax probability.",
+  "bottomk_rule": "ranks 500-k+1..500 of the filtered active pool",
+  "random_control": "k iid gaussian directions per layer, QR-orthonormalized by the ablate op; subspace dimension exactly matches real",
+  "fixed_scoring": "argmax over letter-token logits ' A'..' D' at last position",
+  "leak_rule": "top-k concept string equals an answer content word, or plural-stripped equal, or (len>=4) prefix relation",
+  "bos_prepended": false,
+  "pos_start": 0,
+  "softcap": 0.0,
+  "fixed_label_histogram": {
+   "D": 51,
+   "B": 38,
+   "A": 47,
+   "C": 44
+  },
+  "python": "3.12.3",
+  "torch": "2.11.0+gitd0c8b1f",
+  "transformers": "5.12.1",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "wall_clock_seconds": 1987.1
+ }
+}
